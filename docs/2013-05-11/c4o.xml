@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/hasGlobalCountSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has global count source</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:comment xml:lang="en">A property linking the property c40:GlobalCitationCount to the bibliographic information source providing the global citation count information for a particular publication on a particular date.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/GlobalCitationCount"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/c4o/BibliographicInformationSource"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N11677d2da9a14ff1aadc5ae8ef741206">
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/pertainsTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/InTextReferencePointer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:description rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer%20module.png"/>
+    <rdfs:subClassOf rdf:nodeID="N9041342600dd4fb89597870bc58ed181"/>
+    <rdfs:subClassOf rdf:nodeID="N7da27bc7345f497f981bc135186cfd56"/>
+    <dc:description xml:lang="en">An in-text reference pointer is a textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence.</dc:description>
+    <rdfs:comment xml:lang="en">The in-text reference pointer is a textual element, usually embedded at the end of a phrase or sentence within the text of a document, that denotes a specific bibliographic reference present in the reference list of that document. For example, if the item in the reference list is: 
+
+4.  Ko AI, Reis MG, Ribeiro Dourado CM, Johnson WD Jr, Riley LW (1999). Urban epidemic of severe leptospirosis in Brazil. Salvador Leptospirosis Study Group. Lancet 354: 820-825.
+
+the in-text reference pointer to this paper in a journal article may be manifested in a number of ways:	
+
+Numerically, for example by using the numeral 4 in superscript or between square brackets, thus: [4].  Such numerical in-text 
+reference pointers are frequently aggregated, e.g. [4, 5, 6-9].  In such cases, the missing pointers to references 7 and 8 are inferred (and should be added explicitly to the XML mark-up at this point in the text!). 
+
+Or by use of the author names (or the first author's name plus et al.) and the publication year in parentheses, thus: (Ko et al., 1999). 
+
+Or, less commonly, by the use of a code, e.g. by specifying the first surname letter of the first three author of the cited work followed by the last two digits of the year of publication, this string of characters being enclosed within square brackets, thus: [KRR99].</rdfs:comment>
+    <rdfs:label xml:lang="en">in-text reference pointer</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/hasInTextCitationFrequency">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment xml:lang="en">This property allows one to specify how many separate in-text reference pointers exist within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). </rdfs:comment>
+    <rdfs:label xml:lang="en">has in text citation frequency</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/hasContext">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:nodeID="Na86824b1d74148fca68fd93486eda589"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has context</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+    <dc:description xml:lang="en">Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property c4o:hasContent.</dc:description>
+    <rdfs:comment xml:lang="en">This property is used to indicate the textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, this context providing the rhetorical motivation for the existence of that citation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o">
+    <dc:description rdf:resource="http://purl.org/spar/c4o/CitationCounting%20module.png"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.1.1</owl:versionInfo>
+    <dc:title xml:lang="en">C4O, the Citation Counting and Context Characterization Ontology</dc:title>
+    <dc:description xml:lang="en">C4O, the Citation Counting and Context Characterization Ontology (C4O) allows the characterization of bibliographic citations in terms of their number and their context.
+
+It provides the ontological structures to permit the number of in-text citations of a cited source (i.e. the number of in-text reference pointers to a single reference in the citing article's reference list) to be recorded, and also the number of citations a cited entity has received globally, as determined by a bibliographic information resource such as Google Scholar, Scopus or Web of Knowledge on a particular date.
+
+Moreover, it enables ontological descriptions of the context within the citing document in which an in-text reference pointer appears, and permits that context to be related to relevant textual passages in the cited document.
+</dc:description>
+    <owl:priorVersion rdf:resource="https://svn.code.sf.net/p/sempublishing/code/C4O/2012-07-03-c4o-1_1.owl"/>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silvio Peroni</dc:creator>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dc:rights xml:lang="en">This work is distributed under a Creative Commons Attribution License (http://creativecommons.org/licenses/by/3.0/).</dc:rights>
+    <owl:versionIRI rdf:resource="http://purl.org/spar/c4o/2013-05-11"/>
+    <dc:date>2013-05-11</dc:date>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Shotton</dc:creator>
+    <owl:imports rdf:resource="http://purl.org/spar/biro"/>
+    <rdfs:comment xml:lang="en">The Citation Counting and Context Characterization Ontology (C4O) is an ontology for characterizing the number and contexts of bibliographic citations. It forms part of SPAR, a suite of Semantic Publishing and Referencing Ontologies. This ontology is available at http://purl.org/spar/c4o, and uses the namespace prefix c4o. Other SPAR ontologies are described at http://purl.org/spar/.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N13e03018aaf74a6dae69cc8805941153">
+    <swrl:classPredicate rdf:resource="http://purl.org/spar/c4o/InTextReferencePointerList"/>
+    <swrl:argument1 rdf:resource="urn:swrl#l"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/InTextReferencePointerList">
+    <rdfs:subClassOf rdf:nodeID="Na40db4cc72fd4b1cb162003e6f69d72c"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/co/List"/>
+    <rdfs:comment xml:lang="en">A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains.</rdfs:comment>
+    <dc:description xml:lang="en">An in-text reference pointer list can contains only in-text reference pointer list items and it always pertains to one or more bibliographic references.</dc:description>
+    <rdfs:label xml:lang="en">in-text reference pointer list</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="N11677d2da9a14ff1aadc5ae8ef741206"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/InTextReferencePointerListItem">
+    <dc:description xml:lang="en">An in-text reference pointer list item can contain only a single in-text reference pointer.
+
+Note that, as specified through the hasKey assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.</dc:description>
+    <rdfs:subClassOf rdf:nodeID="N2636db2cc0ef486c91a257f2a8723d48"/>
+    <rdfs:comment xml:lang="en">This class describes all the list items that must be used in the context of an in-text reference pointer list.</rdfs:comment>
+    <rdfs:label xml:lang="en">in-text reference pointer list item</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/co/ListItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/denotes">
+    <rdfs:label xml:lang="en">denotes</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+    <rdfs:comment xml:lang="en">A property used to assert the connection between an in-text reference pointer and the bibliographic reference it points to.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c214acbadea44c393063703a2c4b585">
+    <rdf:first rdf:nodeID="Ne37b46d4014b4b46b71df9846b361a52"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9041342600dd4fb89597870bc58ed181">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/hasContext"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/pertainsTo">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label xml:lang="en">pertains to</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/InTextReferencePointerList"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+    <rdfs:comment xml:lang="en">The property linking an in-text reference pointer list to the bibliographic reference or references denoted by the in-text reference pointers within that list.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7da27bc7345f497f981bc135186cfd56">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/denotes"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/isRelevantTo">
+    <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:label xml:lang="en">is relevant to</rdfs:label>
+    <rdfs:comment xml:lang="en">A property allowing one FRBR expression to be declared to be of rhetorical relevance to another, for instance that the textual context of a particular in-text reference pointer in one document is relevant to a section of text within the published document that is referenced by the bibliographic reference denoted by the in-text reference pointer, and vice versa that the converse relevance also exists.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/isDenotedBy">
+    <rdfs:comment xml:lang="en">A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it.</rdfs:comment>
+    <rdfs:label xml:lang="en">is denoted by</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+    <owl:inverseOf rdf:resource="http://purl.org/spar/c4o/denotes"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/hasGlobalCountDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/GlobalCitationCount"/>
+    <rdfs:label xml:lang="en">has global count date</rdfs:label>
+    <rdfs:comment xml:lang="en">The date on which the global citation count of the cited entity was recorded from a named bibliographic information source.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/SingleReferencePointerList">
+    <rdfs:subClassOf rdf:resource="http://purl.org/spar/c4o/InTextReferencePointerList"/>
+    <rdfs:comment xml:lang="en">An in-text reference pointer list that pertains to exactly one bibliographic reference.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <dc:description xml:lang="en">A single reference pointer list pertains only to one bibliographic reference.
+
+Note that this semantic constraint is handled by the combined use of a particular restriction of this class, i.e. that the list pertains to exactly one owl:Thing, and that the following SWRL rule applies:
+
+c4o:InTextReferencePointerList(?l), c4o:denotes(?p, ?r), swan:item(?l, ?i), swan:itemContent(?i, ?p) -&gt; c4o:pertainsTo(?l, ?r)</dc:description>
+    <rdfs:subClassOf rdf:nodeID="N1090dfcaed0b46368fe5b7ce77daa302"/>
+    <rdfs:label xml:lang="en">single reference pointer list</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N23ba62ffd7334994aa392433ce004b2a">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:rest rdf:nodeID="Ne1182f19da3b4f5490445956ed3040ef"/>
+    <rdf:first rdf:nodeID="N13e03018aaf74a6dae69cc8805941153"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/GlobalCitationCount">
+    <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The number of times a work has been cited globally, as determined from a particular bibliographic information source on a particular date.</rdfs:comment>
+    <rdfs:label xml:lang="en">global citation count</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/hasGlobalCitationFrequency">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:comment xml:lang="en">A property linking a publication entity to the property c40:GlobalCitationCount that specify how many times a work has been cited by others, according to a particular information source on a particular date.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/spar/c4o/GlobalCitationCount"/>
+    <rdfs:label xml:lang="en">has global citation frequency</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Endeavour"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/hasContent">
+    <rdfs:label xml:lang="en">has content</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">It is used to specify the textual content of a particular FRBR expression.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Endeavour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/hasGlobalCountValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has global count value</rdfs:label>
+    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/GlobalCitationCount"/>
+    <rdfs:comment xml:lang="en">An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7647373735b94916b35b33f2df815a25">
+    <swrl:argument2 rdf:resource="urn:swrl#r"/>
+    <swrl:argument1 rdf:resource="urn:swrl#p"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:propertyPredicate rdf:resource="http://purl.org/spar/c4o/denotes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N79f62f81ea4e41d7bce8c6d874f13eae">
+    <swrl:argument2 rdf:resource="urn:swrl#p"/>
+    <swrl:propertyPredicate rdf:resource="http://purl.org/co/element"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+    <swrl:argument1 rdf:resource="urn:swrl#l"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceURI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>http://purl.org/vocab/vann/preferredNamespaceURI</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne1182f19da3b4f5490445956ed3040ef">
+    <rdf:first rdf:nodeID="N79f62f81ea4e41d7bce8c6d874f13eae"/>
+    <rdf:rest rdf:nodeID="N520ac5e50091421ba56b9c833b741b9f"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc340b14d0db54dde89f2f996a02d346f">
+    <swrl:argument1 rdf:resource="urn:swrl#l"/>
+    <swrl:propertyPredicate rdf:resource="http://purl.org/spar/c4o/pertainsTo"/>
+    <swrl:argument2 rdf:resource="urn:swrl#r"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne37b46d4014b4b46b71df9846b361a52">
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/hasContent"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/BibliographicInformationSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">bibliographic information source</rdfs:label>
+    <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/GlobalCitationCount"/>
+    <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+    <rdfs:comment xml:lang="en">A source of information about bibliographic citations, such as Google Scholar, Web of Science or Scopus.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#p">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#r">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N51c39d8e288542d8bd914a48b4e15d79">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    <rdf:first rdf:nodeID="Nc340b14d0db54dde89f2f996a02d346f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na40db4cc72fd4b1cb162003e6f69d72c">
+    <owl:allValuesFrom rdf:resource="http://purl.org/spar/c4o/InTextReferencePointerListItem"/>
+    <owl:onProperty rdf:resource="http://purl.org/co/item"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2636db2cc0ef486c91a257f2a8723d48">
+    <owl:onProperty rdf:resource="http://purl.org/co/itemContent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1090dfcaed0b46368fe5b7ce77daa302">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/pertainsTo"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N41001a4c6390465f831d9069a5da0a3e">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+    <swrl:head rdf:nodeID="N51c39d8e288542d8bd914a48b4e15d79"/>
+    <swrl:body rdf:nodeID="N23ba62ffd7334994aa392433ce004b2a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8871aa92465249a094ea794c491cd57c">
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdf:rest rdf:nodeID="N6c214acbadea44c393063703a2c4b585"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.org/owlapi#nodeID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N520ac5e50091421ba56b9c833b741b9f">
+    <rdf:first rdf:nodeID="N7647373735b94916b35b33f2df815a25"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/rights">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Expression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na86824b1d74148fca68fd93486eda589">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N8871aa92465249a094ea794c491cd57c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/date">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/biro/BibliographicReference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:swrl#l">
+    <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+  </rdf:Description>
+</rdf:RDF>
