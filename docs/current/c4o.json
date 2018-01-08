@@ -57,7 +57,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "_:Na86824b1d74148fca68fd93486eda589"
+        "@id": "_:Nf6b3fb36a17744a89e6b63827729f8b7"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -91,11 +91,23 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+        "@id": "_:N8fc958298b334137bb1645e3cb8dd948"
       },
       {
-        "@id": "_:N1090dfcaed0b46368fe5b7ce77daa302"
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
       }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#Thing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
@@ -105,25 +117,37 @@
     ]
   },
   {
-    "@id": "_:N2636db2cc0ef486c91a257f2a8723d48",
+    "@id": "http://purl.org/spar/c4o/hasGlobalCountValue",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+        "@language": "en",
+        "@value": "An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date."
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://purl.org/co/itemContent"
+        "@id": "http://purl.org/spar/c4o/GlobalCitationCount"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has global count value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
       }
     ]
   },
   {
-    "@id": "http://purl.org/vocab/frbr/core#Endeavour",
+    "@id": "http://www.w3.org/2002/07/owl#versionInfo",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
   },
   {
@@ -133,7 +157,52 @@
     ]
   },
   {
-    "@id": "_:Nc340b14d0db54dde89f2f996a02d346f",
+    "@id": "http://www.semanticweb.org/owlapi#nodeID",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "_:Nf4beac874e74413cb49e759840b387dd",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#ClassAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#l"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#classPredicate": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/date",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "_:N8fc958298b334137bb1645e3cb8dd948",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/pertainsTo"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc6b4898cb73c4b589afd03551153a7a0",
     "@type": [
       "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
     ],
@@ -154,24 +223,7 @@
     ]
   },
   {
-    "@id": "_:N9041342600dd4fb89597870bc58ed181",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/c4o/hasContext"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.semanticweb.org/owlapi#nodeID",
+    "@id": "http://purl.org/dc/elements/1.1/rights",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]
@@ -183,124 +235,24 @@
     ]
   },
   {
-    "@id": "_:N1090dfcaed0b46368fe5b7ce77daa302",
+    "@id": "_:N25c39a964a6849d2924ea08b66896511",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/c4o/pertainsTo"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/elements/1.1/date",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/c4o/GlobalCitationCount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The number of times a work has been cited globally, as determined from a particular bibliographic information source on a particular date."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "global citation count"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
-      }
-    ]
-  },
-  {
-    "@id": "_:N23ba62ffd7334994aa392433ce004b2a",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#AtomList"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "_:N13e03018aaf74a6dae69cc8805941153"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:Ne1182f19da3b4f5490445956ed3040ef"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.org/dc/elements/1.1/rights",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/c4o/isDenotedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2002/07/owl#onClass": [
       {
         "@id": "http://purl.org/spar/biro/BibliographicReference"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is denoted by"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
         "@id": "http://purl.org/spar/c4o/denotes"
       }
-    ]
-  },
-  {
-    "@id": "_:N51c39d8e288542d8bd914a48b4e15d79",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#AtomList"
     ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
       {
-        "@id": "_:Nc340b14d0db54dde89f2f996a02d346f"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@list": []
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
       }
     ]
   },
@@ -338,24 +290,18 @@
     ]
   },
   {
-    "@id": "http://purl.org/vocab/frbr/core#Expression",
+    "@id": "_:N5ab01eedea2d45c3b8c1245819a54aa5",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "_:N520ac5e50091421ba56b9c833b741b9f",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#AtomList"
+      "http://www.w3.org/2003/11/swrl#Imp"
     ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+    "http://www.w3.org/2003/11/swrl#body": [
       {
-        "@id": "_:N7647373735b94916b35b33f2df815a25"
+        "@id": "_:N584da7adb92f4a65af6f2a3be1152c6f"
       }
     ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+    "http://www.w3.org/2003/11/swrl#head": [
       {
-        "@list": []
+        "@id": "_:Nf6cb371f00cd491a8128f1133030d009"
       }
     ]
   },
@@ -386,6 +332,29 @@
     ]
   },
   {
+    "@id": "http://purl.org/spar/c4o/GlobalCitationCount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The number of times a work has been cited globally, as determined from a particular bibliographic information source on a particular date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "global citation count"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.org/vocab/vann/preferredNamespaceURI",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
@@ -393,6 +362,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "http://purl.org/vocab/vann/preferredNamespaceURI"
+      }
+    ]
+  },
+  {
+    "@id": "_:N9788ebee9e4c447f90c81f34a0a388a7",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/hasContent"
       }
     ]
   },
@@ -430,9 +416,21 @@
     ]
   },
   {
-    "@id": "http://purl.org/dc/elements/1.1/creator",
+    "@id": "_:Nf6b3fb36a17744a89e6b63827729f8b7",
     "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://purl.org/vocab/frbr/core#Expression"
+          },
+          {
+            "@id": "_:N9788ebee9e4c447f90c81f34a0a388a7"
+          }
+        ]
+      }
     ]
   },
   {
@@ -481,48 +479,50 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:N9041342600dd4fb89597870bc58ed181"
-      },
-      {
-        "@id": "_:N7da27bc7345f497f981bc135186cfd56"
-      },
-      {
         "@id": "http://purl.org/vocab/frbr/core#Expression"
+      },
+      {
+        "@id": "_:N25c39a964a6849d2924ea08b66896511"
+      },
+      {
+        "@id": "_:N1b524a5e00db45ff88c8f6e76afc109a"
       }
     ]
   },
   {
-    "@id": "http://purl.org/spar/c4o/InTextReferencePointerList",
+    "@id": "_:Ne328d6fcf7e445a38f0fc0a797bfaf4f",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://purl.org/dc/elements/1.1/description": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@language": "en",
-        "@value": "An in-text reference pointer list can contains only in-text reference pointer list items and it always pertains to one or more bibliographic references."
+        "@id": "http://purl.org/spar/c4o/pertainsTo"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@language": "en",
-        "@value": "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ]
+  },
+  {
+    "@id": "_:Necd93419c81c4dc4974b36fdaa744858",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#l"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2003/11/swrl#argument2": [
       {
-        "@language": "en",
-        "@value": "in-text reference pointer list"
+        "@id": "urn:swrl#p"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
       {
-        "@id": "_:Na40db4cc72fd4b1cb162003e6f69d72c"
-      },
-      {
-        "@id": "http://purl.org/co/List"
-      },
-      {
-        "@id": "_:N11677d2da9a14ff1aadc5ae8ef741206"
+        "@id": "http://purl.org/co/element"
       }
     ]
   },
@@ -560,28 +560,62 @@
     ]
   },
   {
-    "@id": "_:N7647373735b94916b35b33f2df815a25",
+    "@id": "http://purl.org/spar/c4o/isDenotedBy",
     "@type": [
-      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
-    "http://www.w3.org/2003/11/swrl#argument1": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "urn:swrl#p"
+        "@language": "en",
+        "@value": "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."
       }
     ],
-    "http://www.w3.org/2003/11/swrl#argument2": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "urn:swrl#r"
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
       }
     ],
-    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is denoted by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
       {
         "@id": "http://purl.org/spar/c4o/denotes"
       }
     ]
   },
   {
-    "@id": "_:Na40db4cc72fd4b1cb162003e6f69d72c",
+    "@id": "_:N1b524a5e00db45ff88c8f6e76afc109a",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/hasContext"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7255462ce96d41808c748036f4010cbc",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -597,68 +631,18 @@
     ]
   },
   {
-    "@id": "_:Ne37b46d4014b4b46b71df9846b361a52",
+    "@id": "_:N584da7adb92f4a65af6f2a3be1152c6f",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2003/11/swrl#AtomList"
     ],
-    "http://www.w3.org/2002/07/owl#maxCardinality": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
+        "@id": "_:Nf4beac874e74413cb49e759840b387dd"
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
       {
-        "@id": "http://purl.org/spar/c4o/hasContent"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2002/07/owl#Thing",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "_:N7da27bc7345f497f981bc135186cfd56",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onClass": [
-      {
-        "@id": "http://purl.org/spar/biro/BibliographicReference"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/c4o/denotes"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ]
-  },
-  {
-    "@id": "_:N79f62f81ea4e41d7bce8c6d874f13eae",
-    "@type": [
-      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
-    ],
-    "http://www.w3.org/2003/11/swrl#argument1": [
-      {
-        "@id": "urn:swrl#l"
-      }
-    ],
-    "http://www.w3.org/2003/11/swrl#argument2": [
-      {
-        "@id": "urn:swrl#p"
-      }
-    ],
-    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
-      {
-        "@id": "http://purl.org/co/element"
+        "@id": "_:N500a462c25a448878d5f92f0d7bcd893"
       }
     ]
   },
@@ -675,10 +659,10 @@
     ],
     "http://purl.org/dc/elements/1.1/creator": [
       {
-        "@value": "Silvio Peroni"
+        "@value": "David Shotton"
       },
       {
-        "@value": "David Shotton"
+        "@value": "Silvio Peroni"
       }
     ],
     "http://purl.org/dc/elements/1.1/date": [
@@ -688,11 +672,11 @@
     ],
     "http://purl.org/dc/elements/1.1/description": [
       {
-        "@id": "http://purl.org/spar/c4o/CitationCounting%20module.png"
-      },
-      {
         "@language": "en",
         "@value": "C4O, the Citation Counting and Context Characterization Ontology (C4O) allows the characterization of bibliographic citations in terms of their number and their context.\n\nIt provides the ontological structures to permit the number of in-text citations of a cited source (i.e. the number of in-text reference pointers to a single reference in the citing article's reference list) to be recorded, and also the number of citations a cited entity has received globally, as determined by a bibliographic information resource such as Google Scholar, Scopus or Web of Knowledge on a particular date.\n\nMoreover, it enables ontological descriptions of the context within the citing document in which an in-text reference pointer appears, and permits that context to be related to relevant textual passages in the cited document.\n"
+      },
+      {
+        "@id": "http://purl.org/spar/c4o/CitationCounting%20module.png"
       }
     ],
     "http://purl.org/dc/elements/1.1/rights": [
@@ -710,7 +694,7 @@
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "The Citation Counting and Context Characterization Ontology (C4O) is an ontology for characterizing the number and contexts of bibliographic citations. It forms part of SPAR, a suite of Semantic Publishing and Referencing Ontologies. This ontology is available at http://purl.org/spar/c4o, and uses the namespace prefix c4o. Other SPAR ontologies are described at http://purl.org/spar/."
+        "@value": "The Citation Counting and Context Characterisation Ontology (C4O) is an ontology that permits the number of in-text citations of a cited source to be recorded, together with their textual citation contexts, along with the number of citations a cited entity has received globally on a particular date.\n\n**URL:** http://purl.org/spar/c4o\n\n**Creators**: [David Shotton](http://orcid.org/0000-0001-5506-523X), [Silvio Peroni](http://orcid.org/0000-0003-0530-4305)\n\n**License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n**Website:** http://www.sparontologies.net/ontologies/c4o\n\n**Cite as:** Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. (2014). Describing bibliographic references in RDF. In Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014). http://ceur-ws.org/Vol-1155/paper-05.pdf"
       }
     ],
     "http://www.w3.org/2002/07/owl#imports": [
@@ -801,30 +785,53 @@
     ]
   },
   {
-    "@id": "http://purl.org/spar/c4o/hasGlobalCountValue",
+    "@id": "_:N2c4f7951ca6149228fbb0b931d01060f",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:Nb737dba1ae42458a86c1750cfbf96d16"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/InTextReferencePointerList",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "An in-text reference pointer list can contains only in-text reference pointer list items and it always pertains to one or more bibliographic references."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://purl.org/spar/c4o/GlobalCitationCount"
+        "@value": "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has global count value"
+        "@value": "in-text reference pointer list"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        "@id": "http://purl.org/co/List"
+      },
+      {
+        "@id": "_:Ne328d6fcf7e445a38f0fc0a797bfaf4f"
+      },
+      {
+        "@id": "_:N7255462ce96d41808c748036f4010cbc"
       }
     ]
   },
@@ -835,87 +842,51 @@
     ]
   },
   {
-    "@id": "_:N13e03018aaf74a6dae69cc8805941153",
+    "@id": "_:N500a462c25a448878d5f92f0d7bcd893",
     "@type": [
-      "http://www.w3.org/2003/11/swrl#ClassAtom"
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:Necd93419c81c4dc4974b36fdaa744858"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:N2c4f7951ca6149228fbb0b931d01060f"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#Endeavour",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "_:Nb737dba1ae42458a86c1750cfbf96d16",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
     ],
     "http://www.w3.org/2003/11/swrl#argument1": [
       {
-        "@id": "urn:swrl#l"
+        "@id": "urn:swrl#p"
       }
     ],
-    "http://www.w3.org/2003/11/swrl#classPredicate": [
+    "http://www.w3.org/2003/11/swrl#argument2": [
       {
-        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
-      }
-    ]
-  },
-  {
-    "@id": "_:Na86824b1d74148fca68fd93486eda589",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#intersectionOf": [
-      {
-        "@list": [
-          {
-            "@id": "http://purl.org/vocab/frbr/core#Expression"
-          },
-          {
-            "@id": "_:Ne37b46d4014b4b46b71df9846b361a52"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2002/07/owl#versionInfo",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ]
-  },
-  {
-    "@id": "http://purl.org/spar/c4o/hasInTextCitationFrequency",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "http://www.w3.org/2002/07/owl#FunctionalProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "This property allows one to specify how many separate in-text reference pointers exist within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "
+        "@id": "urn:swrl#r"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
       {
-        "@id": "http://purl.org/spar/biro/BibliographicReference"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has in text citation frequency"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-      }
-    ]
-  },
-  {
-    "@id": "_:N11677d2da9a14ff1aadc5ae8ef741206",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/spar/c4o/pertainsTo"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://purl.org/spar/biro/BibliographicReference"
+        "@id": "http://purl.org/spar/c4o/denotes"
       }
     ]
   },
@@ -984,7 +955,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:N2636db2cc0ef486c91a257f2a8723d48"
+        "@id": "_:N1586e16a28f445a7acd94a52fca0fa3a"
       },
       {
         "@id": "http://purl.org/co/ListItem"
@@ -992,19 +963,9 @@
     ]
   },
   {
-    "@id": "_:Ne1182f19da3b4f5490445956ed3040ef",
+    "@id": "http://purl.org/vocab/frbr/core#Expression",
     "@type": [
-      "http://www.w3.org/2003/11/swrl#AtomList"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
-      {
-        "@id": "_:N79f62f81ea4e41d7bce8c6d874f13eae"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
-      {
-        "@id": "_:N520ac5e50091421ba56b9c833b741b9f"
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
@@ -1014,24 +975,63 @@
     ]
   },
   {
-    "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "@id": "_:Nf6cb371f00cd491a8128f1133030d009",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:Nc6b4898cb73c4b589afd03551153a7a0"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
     ]
   },
   {
-    "@id": "_:N41001a4c6390465f831d9069a5da0a3e",
+    "@id": "_:N1586e16a28f445a7acd94a52fca0fa3a",
     "@type": [
-      "http://www.w3.org/2003/11/swrl#Imp"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2003/11/swrl#body": [
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
       {
-        "@id": "_:N23ba62ffd7334994aa392433ce004b2a"
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
       }
     ],
-    "http://www.w3.org/2003/11/swrl#head": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "_:N51c39d8e288542d8bd914a48b4e15d79"
+        "@id": "http://purl.org/co/itemContent"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/hasInTextCitationFrequency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#FunctionalProperty",
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "This property allows one to specify how many separate in-text reference pointers exist within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has in text citation frequency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
       }
     ]
   }
