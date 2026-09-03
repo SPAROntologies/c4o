@@ -1,0 +1,29 @@
+@prefix biro: <http://purl.org/spar/biro/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:isDenotedBy a owl:ObjectProperty ;
+    rdfs:label "is denoted by"@en ;
+    vann:example """
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.' ;
+        c4o:isDenotedBy :my-in-text-reference-pointer ;
+        biro:references :my-article .
+
+    :my-in-text-reference-pointer a c4o:InTextReferencePointer .
+    """ ;
+    rdfs:comment "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."@en ;
+    rdfs:domain biro:BibliographicReference ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range c4o:InTextReferencePointer ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vs:term_status reg:statusStable .
+

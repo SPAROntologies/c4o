@@ -1,0 +1,4 @@
+<http://purl.org/vocab/frbr/core#Endeavour> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/vocab/frbr/core#> .
+<http://purl.org/vocab/frbr/core#Endeavour> <http://www.w3.org/2000/01/rdf-schema#label> "endeavour"@en .
+<http://purl.org/vocab/frbr/core#Endeavour> <http://www.w3.org/2000/01/rdf-schema#comment> "The different aspects of user interests in the products of intellectual or artistic artifact."@en .
+<http://purl.org/vocab/frbr/core#Endeavour> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

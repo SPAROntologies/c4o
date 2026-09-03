@@ -1,0 +1,9 @@
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spar/c4o/InTextReferencePointer> .
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spar/c4o/GlobalCitationCount> .
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://www.w3.org/2000/01/rdf-schema#label> "bibliographic information source"@en .
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spar/c4o/SingleLocationPointerList> .
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/c4o/> .
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://purl.org/vocab/vann/example> "\n    :my-article\n        c4o:hasGlobalCitationFrequency :my-global-citation-count .\n\n    :my-global-citation-count a c4o:GlobalCitationCount ;\n        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;\n        c4o:hasGlobalCountSource :my-bibliographic-info-source .\n\n    :my-bibliographic-info-source a c4o:BibliographicInformationSource  ;\n        foaf:homepage <http://scholar.google.com> .\n    " .
+<http://purl.org/spar/c4o/BibliographicInformationSource> <http://www.w3.org/2000/01/rdf-schema#comment> "A source of information about bibliographic citations, such as Google Scholar, Web of Science or Scopus."@en .

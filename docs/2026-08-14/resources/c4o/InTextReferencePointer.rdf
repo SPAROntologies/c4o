@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos1="http://www.w3.org/2008/05/skos#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:nodeID="nbe907eaac5a34be089dc81e641c920f8b11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/denotes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/InTextReferencePointer">
+    <rdfs:subClassOf rdf:nodeID="nbe907eaac5a34be089dc81e641c920f8b11"/>
+    <rdfs:subClassOf rdf:nodeID="nbe907eaac5a34be089dc81e641c920f8b12"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <vann:example>
+    :my-article
+        frbr:part :my-in-text-ref-pointer , :my-bibliographic-reference .
+
+    :my-in-text-ref-pointer a c4o:InTextReferencePointer  ;
+        c4o:denotes :my-bibliographic-reference ;
+        c4o:hasContext :my-citation-sentence .
+    </vann:example>
+    <rdfs:label xml:lang="en">in-text reference pointer</rdfs:label>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
+    <skos1:note xml:lang="en">
+The in-text reference pointer is a textual element, usually embedded at the end of a phrase or sentence within the text of a document, that denotes a specific bibliographic reference present in the reference list of that document. 
+For example, if the item in the reference list is: 
+
+    4.  Ko AI, Reis MG, Ribeiro Dourado CM, Johnson WD Jr, Riley LW (1999). Urban epidemic of severe leptospirosis in Brazil. Salvador Leptospirosis Study Group. Lancet 354: 820-825.
+
+The in-text reference pointer to this paper in a journal article may be manifested in a number of ways:	
+
+* Numerically, for example by using the numeral 4 in superscript or between square brackets, thus: '[4]'.
+* Or by use of the author names (or the first author's name plus et al.) and the publication year in parentheses, thus: '(Ko et al., 1999)'. 
+* Or, less commonly, by the use of a code, e.g. by specifying the first surname letter of the first three author of the cited work followed by the last two digits of the year of publication, this string of characters being enclosed within square brackets, thus: '[KRR99]'.
+
+If reference pointers are aggregated, e.g. '[4, 5, 6-9]', they may be described by means of the class `c4o:SingleLocationPointerList`.
+</skos1:note>
+    <rdfs:comment xml:lang="en">A textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence.</rdfs:comment>
+    <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/SingleLocationPointerList"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="nbe907eaac5a34be089dc81e641c920f8b12">
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/hasContext"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,498 @@
+<!doctype html><html lang=en><meta charset=UTF-8><meta content="width=device-width,initial-scale=1.0" name=viewport><title>LODE 2.0 - Semantic Artefact Viewer</title><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css rel=stylesheet><link href=../../static/style.css rel=stylesheet><link href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css rel=stylesheet><body><div class="container-fluid px-4 py-4"><details class=metadata-accordion><summary class=metadata-accordion-summary><div class=resource-frontmatter><h1 class=resource-title>denotes</h1><div class=resource-meta-line><span class="resource-meta-uri font-monospace text-truncate">http://purl.org/spar/c4o/denotes</span><a title="Go to Resource" class=resource-meta-link href=http://purl.org/spar/c4o/denotes target=_blank> <i class="bi bi-box-arrow-up-right"></i> </a></div><p class=resource-subtitle>as defined in <span class=resource-subtitle-ontology> The Citation Counting and Context Characterization Ontology (C4O) </span> <button title="Show/hide ontology metadata" class=metadata-accordion-toggle onclick=toggleMetadataAccordion(event) type=button><i class="bi bi-chevron-down"></i></button></div></summary> <div class=p-3><section class=metadata-block><dl class="row mb-0 lead fs-6"><dt class="text-capitalize fs-7 fw-bold">bibliographic citation<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. (2014). Describing bibliographic references in RDF. In Garcia Castro, A., Lange, C., Lord, P., Stevens, R. (Eds.), Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014), CEUR Workshop Proceedings 1155. Aachen, Germany: CEUR-WS.org. http://ceur-ws.org/Vol-1155/paper-05.pdf (Open Access)</div></div></div><dt class="text-capitalize fs-7 fw-bold">code repository<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://github.com/SPAROntologies/c4o target=_blank>https://github.com/SPAROntologies/c4o</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">collaborator<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)</div></div></div><dt class="text-capitalize fs-7 fw-bold">created<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">2013-05-11</div></div></div><dt class="text-capitalize fs-7 fw-bold">creator<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">David Shotton (https://orcid.org/0000-0001-5506-523X)</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">Silvio Peroni (https://orcid.org/0000-0003-0530-4305)</div></div></div><dt class="text-capitalize fs-7 fw-bold">date<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">2026-08-14</div></div></div><dt class="text-capitalize fs-7 fw-bold">description<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">
+The **_Citation Counting and Context Characterization Ontology (C4O)_** allows the characterization of bibliographic citations in terms of their number and their context.
+
+Besides defining reference lists and bibliographic references in a machine-readable form, it is also useful to describe how these references are used in the citing paper. 
+In particular, we would need entities that describe all the items introduced in the situation where a document - i.e., the paper &#39;Intertextual semantics: a semantics for information design&#39; - cites another - i.e., &#39;Towards a semantics for XML markup&#39;). Those entities include:
+* in-text reference pointers within the citing paper;
+* links to the bibliographic references denoted by in-text reference pointers;
+* how much a particular document is locally cited by the citing document – i.e., the total number of in-text reference pointers within the citing paper denoting the same bibliographic reference; how much an article is globally cited (according to particular bibliographic citation service, e.g., Google Scholar);
+* the contexts involved in a citation – i.e., the part of the citing article containing a particular in-text reference pointer and the part of the cited article that is relevant to such citation.
+
+![The architecture of C4O.](c4o.png)
+
+C4O has been developed to allow the description of the above entities. 
+This ontology extends [BiRO](http://purl.org/spar/biro) in order to enable the characterisation of bibliographic citations in terms of their presence in an article by means of the following classes:
+* class `c4o:InTextReferencePointer ` - an in-text reference pointer is a textual device denoting (`c4o:denotes `) a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence;
+* class `c4o:InTextReferencePointerList` - a list containing (through the chain `co:item` and `co:itemContent`) only in-text reference pointers denoting the specific bibliographic references to which the list pertains (`c4o:pertains`). Such a list cannot contain more than one item containing the same in-text reference pointer;
+* class `c4o:SingleReferencePointerList ` - defined as subclass of `c4o:InTextReferencePointerList`, it is an in-text reference pointer list that pertains to exactly one bibliographic reference;
+* class `c4o:SingleLocationPointerList ` - defined as subclass of `c4o:InTextReferencePointerList`, it is an in-text reference pointer list that pertains to all the in-text reference pointers to two or more references occurring at a single location in the text of the citing work;
+* class `c4o:GlobalCitationCount` - the number of times a work has been cited globally (`c4o:hasGlobalCountValue`), as determined from a particular bibliographic information source (`c4o:hasGlobalCountSource`) on a particular date (`c4o:hasGlobalCountDate`).
+
+In addition, C4O provides the ontological structures which allow one to record the number of in-text citations (`c4o:hasInTextCitationFrequency`) i.e., the number of in-text reference pointers to a single reference in the reference list of the citing article.
+
+![A detail on modelling in-text reference pointers using BiRO.](c4o-pointer.png)
+
+Moreover, C4O enables ontological descriptions of the context where an in-text reference pointer appears in the citing document, and allows one to relate that context to relevant textual passages in the cited document.
+
+## Examples of use
+
+In the following subsections, we introduce some examples to showcase how to use C4O. 
+
+The prefixes that are used in all the examples provided below are defined as follows:
+
+    @prefix : &lt;http://www.sparontologies.net/example/&gt; .
+    @prefix biro: &lt;http://purl.org/spar/biro/&gt; .
+    @prefix c4o: &lt;http://purl.org/spar/biro/&gt; .
+    @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+    @prefix doco: &lt;http://purl.org/spar/doco/&gt; .
+    @prefix frbr: &lt;http://purl.org/vocab/frbr/core#&gt; .
+    @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+    @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+### Describing citation contexts
+
+In a particular sentence of the paper entitled &#39;Intertextual semantics: A semantics for information design&#39; there is a citation to the paper &#39;Towards a semantics for XML markup&#39; made through a in-text reference pointer to a specific bibliographic reference.
+
+C4O enables ontological descriptions of the citation context where an in-text reference pointer appears in the citing document, and allows one to relate that context to relevant textual passages in the cited document.
+
+    &lt;http://dx.doi.org/10.1002/asi.21134&gt;
+        frbr:part :in-text-renear02 , :renear02 .
+
+    :in-text-renear02 a c4o:InTextReferencePointer  ;
+        c4o:denotes  :renear02 ;
+        c4o:hasContext  :citation-sentence .
+
+    :renear02 a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            &#39;Renear, A., Dubin, D. &amp; Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.&#39; ;
+        biro:references &lt;http://dx.doi.org/10.1145/585058.585081&gt; .
+
+    :citation-sentence a doco:Sentence ;
+        c4o:hasContent
+            &#39;Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)
+            proposed a formal semantic approach for structured documents.&#39; .
+
+    &lt;http://dx.doi.org/10.1145/585058.585081&gt;
+        frbr:part :cited-sentence .
+
+    :cited-sentence a doco:Sentence ;
+        c4o:hasContent
+            &#39;Markup semantics are modeled computationally by applying
+            knowledge representation technologies to the problem of making
+            those structures, relationships, and properties explicit.&#39; ;
+        c4o:isRelevantTo  :citation-sentence .
+
+### Keeping track of global citation count 
+
+C4O allows one to record the number of citations a cited entity has received globally (`c4o:hasGlobalCitationCount`), as determined by a bibliographic information resource (`c4o:hasGlobalCountSource`) such as Google Scholar, Scopus or Web of Knowledge on a particular date (`c4o:hasGlobalCountDate`).
+
+For instance we can write a set of assertions according to C4O that describe how many times the reference - contained in the paper &#39;Intertextual semantics: A semantics for information design&#39; and referring to the paper &#39;Towards a semantics for XML markup&#39; - is used within the citing article and how much the cited article is globally cited according to Google Scholar.
+
+    &lt;http://dx.doi.org/10.1002/asi.21134&gt;
+        frbr:part :renear02 .
+
+    :renear02 a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            &#39;Renear, A., Dubin, D. &amp; Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.&#39; ;
+        biro:references &lt;http://dx.doi.org/10.1145/585058.585081&gt; ;
+        c4o:hasInTextCitationFrequency  &#34;1&#34;^^xsd:nonNegativeInteger .
+
+    &lt;http://dx.doi.org/10.1145/585058.585081&gt;
+        c4o:hasGlobalCitationFrequency :g-citation-2014-03-17 .
+
+    :g-citation-2014-03-17 a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountDate &#39;2014-03-17&#39;^^xsd:date ;
+        c4o:hasGlobalCountSource :google-scholar ;
+        c4o:hasGlobalCountValue  &#39;5&#39;^^xsd:nonNegativeInteger .
+
+    :google-scholar a c4o:BibliographicInformationSource  ;
+        foaf:homepage &lt;http://scholar.google.com&gt; .
+
+## Competency Questions
+
+BiRO can be used for answering several questions related to bibliographic records and references.
+In the following subsections, some of them are introduced together with their respective SPARQL queries. 
+
+The prefixes that are used in all the SPARQL queries provided below are defined as follows:
+
+    PREFIX biro: &lt;http://purl.org/spar/biro/&gt;
+    PREFIX co: &lt;http://purl.org/co/&gt;
+    PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+    PREFIX frbr: &lt;http://purl.org/vocab/frbr/core#&gt;&gt;
+    PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+    PREFIX literal: &lt;http://www.essepuntato.it/2010/06/literalreification/&gt;
+
+### CQ1
+
+Which bibliographic references and citation contexts are associated with an in-text reference pointer?
+
+    SELECT ?inTextPointer ?reference ?context ?contextContent
+    WHERE {
+        ?inTextPointer a c4o:InTextReferencePointer  ;
+            c4o:denotes  ?reference ;
+            c4o:hasContext  ?context .
+        OPTIONAL { ?context c4o:hasContent ?contextContent . }
+    }
+
+### CQ2
+
+Which textual passages in a cited document are relevant to a citing context?
+
+    SELECT ?citingContext ?citingContent ?citedPassage ?citedContent
+    WHERE {
+        ?citedPassage c4o:isRelevantTo  ?citingContext .
+        OPTIONAL { ?citingContext c4o:hasContent ?citingContent . }
+        OPTIONAL { ?citedPassage c4o:hasContent ?citedContent . }
+    }
+
+### CQ3
+
+What is the in-text citation frequency of a bibliographic reference within a citing document?
+
+    SELECT ?reference ?frequency ?citedWork
+    WHERE {
+        ?reference a biro:BibliographicReference ;
+            c4o:hasInTextCitationFrequency  ?frequency .
+        OPTIONAL { ?reference biro:references ?citedWork . }
+    }
+
+### CQ4
+
+What is the global citation count of a document, including the source and measurement date?
+
+    SELECT ?document ?citationCount ?countValue ?source ?date
+    WHERE {
+        ?document c4o:hasGlobalCitationFrequency ?citationCount .
+        ?citationCount a c4o:GlobalCitationCount ;
+            c4o:hasGlobalCountValue  ?countValue ;
+            c4o:hasGlobalCountSource ?source ;
+            c4o:hasGlobalCountDate ?date .
+    }
+
+### CQ5
+
+What information sources are used to track global citation counts, along with their homepages?
+
+    SELECT ?source ?homepage
+    WHERE {
+        ?source a c4o:BibliographicInformationSource  .
+        OPTIONAL { ?source foaf:homepage ?homepage . }
+    }
+
+</div></div></div><dt class="text-capitalize fs-7 fw-bold">doi<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">https://doi.org/10.25504/FAIRsharing.beb855</div></div></div><dt class="text-capitalize fs-7 fw-bold">image<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://github.com/SPAROntologies/c4o/blob/master/docs/current/c4o.png target=_blank>https://github.com/SPAROntologies/c4o/blob/master/docs/current/c4o.png</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">imports<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/biro target=_blank>http://purl.org/spar/biro</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">included in data catalog<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://fairsharing.org/ target=_blank>https://fairsharing.org/</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">is backward compatible with<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/c4o/2018-06-22 target=_blank>http://purl.org/spar/c4o/2018-06-22</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">issued<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">2018-06-22</div></div></div><dt class="text-capitalize fs-7 fw-bold">keywords<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">bibliographic references</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">semantic publishing</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">bibliometrics</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">scholarly publishing</div></div><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">scientometrics</div></div></div><dt class="text-capitalize fs-7 fw-bold">license<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://creativecommons.org/licenses/by/4.0/ target=_blank>http://creativecommons.org/licenses/by/4.0/</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">logo<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://github.com/SPAROntologies/c4o/blob/master/spar.png target=_blank>https://github.com/SPAROntologies/c4o/blob/master/spar.png</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">modified<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">2026-08-14</div></div></div><dt class="text-capitalize fs-7 fw-bold">preferred namespace prefix<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">c4o</div></div></div><dt class="text-capitalize fs-7 fw-bold">preferred namespace uri<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">http://purl.org/spar/c4o</div></div></div><dt class="text-capitalize fs-7 fw-bold">prior version<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/c4o/2018-06-22 target=_blank>http://purl.org/spar/c4o/2018-06-22</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">publisher<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://ror.org/00wb4mk85 target=_blank>https://ror.org/00wb4mk85</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">see also<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://www.sparontologies.net/ontologies/c4o target=_blank>http://www.sparontologies.net/ontologies/c4o</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">source<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=https://github.com/sparontologies/c4o/docs/cq.md target=_blank>https://github.com/sparontologies/c4o/docs/cq.md</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">status<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/ontology/bibo/status/published target=_blank>http://purl.org/ontology/bibo/status/published</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">title<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">The Citation Counting and Context Characterization Ontology (C4O)</div></div></div><dt class="text-capitalize fs-7 fw-bold">version<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div><a title="Go to Resource" href=http://purl.org/spar/c4o/2026-08-14 target=_blank>http://purl.org/spar/c4o/2026-08-14</a></div></div></div><dt class="text-capitalize fs-7 fw-bold">version info<dd class="m-0 p-0"><div class="d-flex flex-column"><div class=ms-5><div class="markdown-with-badge metadata_p text-dark render-markdown inline-markdown">1.3.1</div></div></div><dt class="text-capitalize fs-7 fw-bold">Other visualisation<dd class=ms-5><a class="btn btn-sm btn-outline-dark me-2" href="https://service.tib.eu/webvowl/#iri=http://purl.org/spar/c4o" target=_blank><i class="bi bi-share"></i> WebVOWL</a> <a class="btn btn-sm btn-outline-dark" href=http://purl.org/spar/c4o target=_blank><i class="bi bi-file-code"></i> Source</a></dl></section></div></details><section class="metadata-block export-block"><dl class="mb-0 pb-3"><dt class="fs-7 fw-bold mb-1">Export<dd class=ms-5><a class="btn btn-sm btn-outline-dark me-2" href=denotes.ttl> <i class="bi bi-filetype-raw"></i> Turtle </a> <a class="btn btn-sm btn-outline-dark me-2" href=denotes.rdf> <i class="bi bi-file-code"></i> RDF/XML </a> <a class="btn btn-sm btn-outline-dark me-2" href=denotes.jsonld> <i class="bi bi-filetype-json"></i> JSON-LD </a> <a class="btn btn-sm btn-outline-dark me-2" href=denotes.nt> <i class="bi bi-file-text"></i> N-Triples </a></dl></section><div class="anchor-offset mb-5"><div class="card mb-2 anchor-offset" id=id_0dfdde4ca7b203230cd816adb53f95e6_Relation><div class="card-header bg-white pt-2 px-1 d-flex justify-content-between align-items-center"><h4 class="fw-bold mb-0"><div class=d-inline-block>denotes</div> <sup class="badge bg-light text-secondary op" title="Object Property">op</sup></h4></div><div class="card-body p-0"><div class="description p-3"><p class=mb-1><span class="text-dark fw-bold">IRI:</span> http://purl.org/spar/c4o/denotes <a title="Go to resource documentation" class=ms-2 href=../c4o/denotes.html><i class="bi bi-box-arrow-up-right"></i></a><div><h6 class="text-dark fw-bold pb-0 mb-0">comment</h6><div class=ms-2><div><div class="markdown-with-badge text-dark render-markdown inline-markdown me-1"
+                                            data-md="The relation between an in-text reference pointer and the bibliographic reference it points to.">The relation between an in-text reference pointer and the bibliographic reference it points to.
+                                        </div> <sup class="badge text-secondary lan" title=English>en</sup></div></div></div></div><div class="attribute p-3 border-top border-bottom bg-light-subtle"><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">is sub property of</h6><div class=ms-2><div class=d-inline-block><a href=../owl/topObjectProperty.html title=http://www.w3.org/2002/07/owl#topObjectProperty>top object property</a><sup class="badge text-secondary op" title="Object Property">op</sup></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">domain</h6><div class=ms-2><div class=d-inline-block><a href=../c4o/InTextReferencePointer.html title=http://purl.org/spar/c4o/InTextReferencePointer>in-text reference pointer</a><sup class="badge text-secondary c" title=Class>c</sup></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">range</h6><div class=ms-2><div class=d-inline-block><a href=../biro/BibliographicReference.html title=http://purl.org/spar/biro/BibliographicReference>bibliographic reference</a><sup class="badge text-secondary c" title=Class>c</sup></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">is defined by</h6><div class=ms-2><div class=d-inline-block><span class=external-ref title=http://purl.org/spar/c4o/>http://purl.org/spar/c4o/</span></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">is inverse of</h6><div class=ms-2><div class=d-inline-block><a href=../c4o/isDenotedBy.html title=http://purl.org/spar/c4o/isDenotedBy>is denoted by</a><sup class="badge text-secondary op" title="Object Property">op</sup></div></div></div><div class=mb-1><h6 class="fw-bold text-dark pb-0 mb-0">label</h6><div class=ms-2><div class="markdown-with-badge text-dark mb-0 render-markdown inline-markdown "
+                                            data-md="denotes">denotes</div> <sup class="badge text-secondary lan" title=English>en</sup></div></div></div><div class="p-3 statement"><div><h6 class="fw-bold text-dark pb-0 mb-0">example</h6><div class=ms-2><div class="d-flex flex-column gap-1"><div><div><div class="markdown-with-badge  render-markdown inline-markdown"
+                title="None"
+                data-md="
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            &#39;Renear, A., Dubin, D. &amp; Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.&#39; ;
+        biro:references :my-article .
+
+    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;
+        c4o:denotes :my-bibliographic-reference .
+    ">
+                    
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            &#39;Renear, A., Dubin, D. &amp; Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.&#39; ;
+        biro:references :my-article .
+
+    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;
+        c4o:denotes :my-bibliographic-reference .
+    
+                </div></div></div></div></div></div><div><h6 class="fw-bold text-dark pb-0 mb-0">term status</h6><div class=ms-2><div class="d-flex flex-column gap-1"><div><a class=external-ref href=http://purl.org/linked-data/registry#statusStable rel=noopener target=_blank title=http://purl.org/linked-data/registry#statusStable>status stable<i class="bi bi-box-arrow-up-right ms-1"></i></a></div></div></div></div></div><div class="card-footer bg-white py-0"><div class="accordion accordion-flush prov-accordion" id=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_acc><div class=accordion-item><h2 class="accordion-header d-flex justify-content-end" id=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_head><button class="accordion-button collapsed py-1 px-2 small fw-bold text-uppercase text-primary w-auto" title="RDF provenance" aria-controls=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov aria-expanded=false data-bs-target=#id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov data-bs-toggle=collapse type=button><span>RDF provenance</span> <i class="bi bi-code"></i></button></h2><div class="accordion-collapse collapse" aria-labelledby=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_head data-bs-parent=#id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_acc id=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov><div class="accordion-body p-2"><ul class="nav nav-tabs nav-tabs-sm justify-content-end small mb-0" role=tablist><li class=nav-item role=presentation><button class="nav-link active py-1 px-2" data-bs-target=#id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_1 data-bs-toggle=tab role=tab type=button>Turtle</button><li class=nav-item role=presentation><button class="nav-link py-1 px-2" data-bs-target=#id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_2 data-bs-toggle=tab role=tab type=button>RDF/XML</button><li class=nav-item role=presentation><button class="nav-link py-1 px-2" data-bs-target=#id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_3 data-bs-toggle=tab role=tab type=button>JSON-LD</button><li class=nav-item role=presentation><button class="nav-link py-1 px-2" data-bs-target=#id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_4 data-bs-toggle=tab role=tab type=button>N-Triples</button></ul><div class=tab-content><div class="tab-pane fade show active" id=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_1 role=tabpanel><pre class="mb-0 small"><code>@prefix biro: &lt;http://purl.org/spar/biro/> .
+@prefix c4o: &lt;http://purl.org/spar/c4o/> .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: &lt;http://purl.org/linked-data/registry#> .
+@prefix vann: &lt;http://purl.org/vocab/vann/> .
+@prefix vs: &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:denotes a owl:ObjectProperty ;
+    rdfs:label "denotes"@en ;
+    vann:example """
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.' ;
+        biro:references :my-article .
+
+    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;
+        c4o:denotes :my-bibliographic-reference .
+    """ ;
+    rdfs:comment "The relation between an in-text reference pointer and the bibliographic reference it points to."@en ;
+    rdfs:domain c4o:InTextReferencePointer ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range biro:BibliographicReference ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf c4o:isDenotedBy ;
+    vs:term_status reg:statusStable .
+
+</code></pre></div><div class="tab-pane fade" id=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_2 role=tabpanel><pre class="mb-0 small"><code>&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  &lt;rdf:Description rdf:about="http://purl.org/spar/c4o/denotes">
+    &lt;rdfs:comment xml:lang="en">The relation between an in-text reference pointer and the bibliographic reference it points to.&lt;/rdfs:comment>
+    &lt;rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    &lt;owl:inverseOf rdf:resource="http://purl.org/spar/c4o/isDenotedBy"/>
+    &lt;rdfs:range rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+    &lt;rdfs:domain rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+    &lt;rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    &lt;rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
+    &lt;rdfs:label xml:lang="en">denotes&lt;/rdfs:label>
+    &lt;vann:example>
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            'Renear, A., Dubin, D. &amp;amp; Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.' ;
+        biro:references :my-article .
+
+    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;
+        c4o:denotes :my-bibliographic-reference .
+    &lt;/vann:example>
+    &lt;vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  &lt;/rdf:Description>
+&lt;/rdf:RDF>
+</code></pre></div><div class="tab-pane fade" id=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_3 role=tabpanel><pre class="mb-0 small"><code>[
+  {
+    "@id": "http://purl.org/spar/c4o/denotes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        dcterms:bibliographicCitation\n            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).\n            Towards a semantics for XML markup. In E. Mudson (Chair),\n            Proceedings of the ACM Symposium on Document Engineering,\n            (pp. 119-126). New York: ACM Press.' ;\n        biro:references :my-article .\n\n    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;\n        c4o:denotes :my-bibliographic-reference .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between an in-text reference pointer and the bibliographic reference it points to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "denotes"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/spar/c4o/isDenotedBy"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  }
+]</code></pre></div><div class="tab-pane fade" id=id_0dfdde4ca7b203230cd816adb53f95e6_Relation_prov_4 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an in-text reference pointer and the bibliographic reference it points to."@en .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/2000/01/rdf-schema#subPropertyOf> &lt;http://www.w3.org/2002/07/owl#topObjectProperty> .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/2002/07/owl#inverseOf> &lt;http://purl.org/spar/c4o/isDenotedBy> .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/2000/01/rdf-schema#range> &lt;http://purl.org/spar/biro/BibliographicReference> .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://purl.org/vocab/vann/example> "\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        dcterms:bibliographicCitation\n            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).\n            Towards a semantics for XML markup. In E. Mudson (Chair),\n            Proceedings of the ACM Symposium on Document Engineering,\n            (pp. 119-126). New York: ACM Press.' ;\n        biro:references :my-article .\n\n    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;\n        c4o:denotes :my-bibliographic-reference .\n    " .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/2000/01/rdf-schema#domain> &lt;http://purl.org/spar/c4o/InTextReferencePointer> .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#ObjectProperty> .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/c4o/> .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> .
+&lt;http://purl.org/spar/c4o/denotes> &lt;http://www.w3.org/2000/01/rdf-schema#label> "denotes"@en .
+</code></pre></div></div></div></div></div></div></div></div></div></div><div><a class="btn btn-outline-secondary" href=../../index.html>← Back to full documentation</a></div><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdn.jsdelivr.net/npm/marked/marked.min.js></script><script src=https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js></script><script>document.addEventListener("DOMContentLoaded", function() {
+
+                // Security hooks
+                DOMPurify.addHook('afterSanitizeAttributes', function(node) {
+                    if (node.tagName === 'A') {
+                        node.setAttribute('target', '_blank');
+                        node.setAttribute('rel', 'noopener noreferrer');
+                    }
+                    if (node.tagName === 'IMG') {
+                        node.setAttribute('class', 'img-fluid border rounded mt-2 mb-2');
+                    }
+                });
+
+                marked.use({
+                    gfm: true,
+                    breaks: false // So line breaks not be added
+                });
+
+                const mdElements = document.querySelectorAll('.render-markdown');
+
+                mdElements.forEach(function(el) {
+                    try {
+                        let rawText = el.dataset.md ?? el.textContent;
+
+                        // Rimuove solo righe vuote iniziali/finali, preserva l'indentazione delle righe
+                        rawText = rawText.replace(/^([ \t]*\n)+/, '').replace(/(\n[ \t]*)+$/, '');
+                        // 2. Strip ANY XML namespace prefix (Turns <html:div> into <div>, </xhtml:p> into </p>)
+                        let cleanText = rawText.replace(/<(\/?)[a-zA-Z0-9_-]+:([a-zA-Z0-9]+)/gi, '<$1$2');
+
+                        // 3. Strip xmlns attributes
+                        cleanText = cleanText.replace(/ xmlns(:[a-zA-Z0-9_-]+)?="[^"]*"/gi, '');
+
+                        let rawHTML = "";
+
+                        // 4. Smart Routing
+                        if (el.tagName === 'SPAN' || el.tagName === 'A') {
+                            rawHTML = marked.parseInline(cleanText);
+                        } else {
+                            rawHTML = marked.parse(cleanText);
+                        }
+
+                        // 5. Sanitize
+                        const cleanHTML = DOMPurify.sanitize(rawHTML, {
+                            ADD_TAGS: ['img'],
+                            ADD_ATTR: ['target', 'src', 'alt', 'title', 'class']
+                        });
+
+                        el.innerHTML = cleanHTML;
+                    } catch (e) {
+                        console.error("Error rendering markdown/html:", e);
+                    }
+                });
+            });
+
+            function exportGraph(mime, ext, navQs, resource) {
+                let qs = navQs;
+                if (resource) qs += "&resource=" + encodeURIComponent(resource);
+                fetch(`/extract?${qs}`, { headers: { "Accept": mime } })
+                    .then(r => { if (!r.ok) throw new Error(r.status); return r.blob(); })
+                    .then(blob => {
+                        const a = document.createElement("a");
+                        const slug = resource ? resource.split(/[#/]/).pop() : "ontology";
+                        a.href = URL.createObjectURL(blob);
+                        a.download = `${slug}.${ext}`;
+                        a.click();
+                        URL.revokeObjectURL(a.href);
+                    })
+                    .catch(e => alert("Export failed: " + e.message));
+            }
+
+            function toggleMetadataAccordion(event) {
+                event.preventDefault();   // blocca il comportamento nativo/bubbling incoerente
+                event.stopPropagation();  // evita il doppio-toggle se il summary lo cattura comunque
+                const details = event.currentTarget.closest('details.metadata-accordion');
+                if (details) details.open = !details.open;
+            }
+            
+            /* SEARCHBAR */
+            (function () {
+                const wrap = document.getElementById('toc-float-search');
+                const toggle = document.getElementById('toc-float-search-toggle');
+                const input = document.getElementById('toc-float-search-input');
+                const countEl = document.getElementById('toc-float-search-count');
+                const prevBtn = document.getElementById('toc-float-search-prev');
+                const nextBtn = document.getElementById('toc-float-search-next');
+                if (!wrap || !toggle || !input) return;
+
+                const cards = Array.from(document.querySelectorAll('.container-fluid .card[id]'));
+                let matches = [];
+                let current = -1;
+
+                function updateCount() {
+                    countEl.textContent = matches.length ? `${current + 1}/${matches.length}` : (input.value ? '0/0' : '');
+                }
+
+                function clearHighlight() {
+                    cards.forEach(c => c.classList.remove('toc-search-current'));
+                }
+
+                function goTo(index) {
+                    if (!matches.length) return;
+                    current = (index + matches.length) % matches.length;
+                    clearHighlight();
+                    const card = matches[current];
+                    card.classList.add('toc-search-current');
+                    card.scrollIntoView({ block: 'start' });
+                    updateCount();
+                }
+
+                function runSearch() {
+                    const q = input.value.trim().toLowerCase();
+                    clearHighlight();
+
+                    // Sidebar: dim + disable non-matching
+                    const sidebar = document.getElementById('toc-sidebar');
+                    if (sidebar) {
+                        sidebar.querySelectorAll('.toc-sidebar-section').forEach(section => {
+                            let anyMatch = false;
+                            section.querySelectorAll('.toc-sidebar-list li').forEach(li => {
+                                const match = !q || li.textContent.toLowerCase().includes(q);
+                                li.classList.toggle('toc-search-dim', !match);
+                                if (match) anyMatch = true;
+                            });
+                            section.classList.toggle('toc-search-dim', q.length > 0 && !anyMatch);
+                            if (q && anyMatch) section.open = true;
+                        });
+                    }
+
+                    if (!q) {
+                        matches = [];
+                        current = -1;
+                        updateCount();
+                        return;
+                    }
+                    matches = cards.filter(card => {
+                        const label = card.querySelector('.card-header h4')?.textContent.toLowerCase() || '';
+                        return label.includes(q);
+                    });
+                    current = -1;
+                    updateCount();
+                    if (matches.length) goTo(0);
+                }
+
+                toggle.addEventListener('click', function () {
+                    const open = wrap.classList.toggle('open');
+                    if (open) {
+                        input.focus();
+                    } else {
+                        input.value = '';
+                        runSearch();
+                    }
+                });
+
+                input.addEventListener('input', runSearch);
+
+                input.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (e.shiftKey) goTo(current - 1);
+                        else goTo(current + 1);
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => goTo(current - 1));
+                nextBtn.addEventListener('click', () => goTo(current + 1));
+            })();</script></div>

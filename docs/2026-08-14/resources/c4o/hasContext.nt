@@ -1,0 +1,19 @@
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+_:nbe907eaac5a34be089dc81e641c920f8b4 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/c4o/hasContent> .
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/2000/01/rdf-schema#range> _:nbe907eaac5a34be089dc81e641c920f8b3 .
+_:nbe907eaac5a34be089dc81e641c920f8b3 <http://www.w3.org/2002/07/owl#intersectionOf> _:nbe907eaac5a34be089dc81e641c920f8b5 .
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/2000/01/rdf-schema#label> "has context"@en .
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:nbe907eaac5a34be089dc81e641c920f8b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nbe907eaac5a34be089dc81e641c920f8b6 .
+_:nbe907eaac5a34be089dc81e641c920f8b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:nbe907eaac5a34be089dc81e641c920f8b4 .
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/c4o/> .
+_:nbe907eaac5a34be089dc81e641c920f8b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/vocab/frbr/core#Expression> .
+_:nbe907eaac5a34be089dc81e641c920f8b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/2000/01/rdf-schema#comment> "The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation."@en .
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/c4o/InTextReferencePointer> .
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/2008/05/skos#note> "Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`."@en .
+<http://purl.org/spar/c4o/hasContext> <http://purl.org/vocab/vann/example> "\n    :my-article\n        frbr:part :in-text-reference-pointer , :my-bibliographic-reference .\n\n    :in-text-reference-pointer a c4o:InTextReferencePointer  ;\n        c4o:denotes :my-bibliographic-reference ;\n        c4o:hasContext  :my-citation-sentence .\n\n    :my-citation-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)\n            proposed a formal semantic approach for structured documents.' .\n    " .
+_:nbe907eaac5a34be089dc81e641c920f8b4 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:nbe907eaac5a34be089dc81e641c920f8b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/c4o/hasContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:nbe907eaac5a34be089dc81e641c920f8b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .

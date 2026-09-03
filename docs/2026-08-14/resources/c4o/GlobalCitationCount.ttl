@@ -1,0 +1,19 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:GlobalCitationCount a owl:Class ;
+    rdfs:label "global citation count"@en ;
+    vann:example """
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:comment "The number of times a work has been cited globally, as determined from a particular bibliographic information source on a particular date."@en ;
+    rdfs:isDefinedBy c4o: ;
+    owl:disjointWith c4o:InTextReferencePointer,
+        c4o:SingleLocationPointerList ;
+    vs:term_status reg:statusStable .
+

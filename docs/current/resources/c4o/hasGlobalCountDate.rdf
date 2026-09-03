@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/hasGlobalCountDate">
+    <vann:example>
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
+
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;
+        c4o:hasGlobalCountDate '2014-03-17'^^xsd:date .
+    </vann:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has global count date</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
+    <rdfs:comment xml:lang="en">The date on which the global citation count of the cited entity was recorded from a named bibliographic information source.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/GlobalCitationCount"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+  </rdf:Description>
+</rdf:RDF>

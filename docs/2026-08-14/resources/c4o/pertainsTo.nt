@@ -1,0 +1,9 @@
+<http://purl.org/spar/c4o/pertainsTo> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/c4o/> .
+<http://purl.org/spar/c4o/pertainsTo> <http://www.w3.org/2000/01/rdf-schema#label> "pertains to"@en .
+<http://purl.org/spar/c4o/pertainsTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://purl.org/spar/c4o/pertainsTo> <http://purl.org/vocab/vann/example> "\n    :my-in-text-ref-pointer-list\n        c4o:pertainsTo :my-bibliographic-reference .\n    " .
+<http://purl.org/spar/c4o/pertainsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spar/c4o/pertainsTo> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between an in-text reference pointer list and the bibliographic reference or references denoted by the in-text reference pointers within that list."@en .
+<http://purl.org/spar/c4o/pertainsTo> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/c4o/pertainsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/c4o/InTextReferencePointerList> .
+<http://purl.org/spar/c4o/pertainsTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/biro/BibliographicReference> .

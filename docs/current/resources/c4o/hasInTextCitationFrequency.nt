@@ -1,0 +1,9 @@
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of separate in-text reference pointers existing within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "@en .
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/c4o/> .
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://purl.org/vocab/vann/example> "\n    :my-article\n        frbr:part :my-bibliographic-reference .\n\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        c4o:hasInTextCitationFrequency  '1'^^xsd:nonNegativeInteger .\n    " .
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/biro/BibliographicReference> .
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://www.w3.org/2000/01/rdf-schema#label> "has in text citation frequency"@en .
+<http://purl.org/spar/c4o/hasInTextCitationFrequency> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .

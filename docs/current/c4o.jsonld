@@ -1,0 +1,1657 @@
+[
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/InTextReferencePointerListItem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-in-text-ref-pointer-list-item\n        co:itemContent :my-in-text-ref-pointer .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A list item that must be used in the context of an in-text reference pointer list."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "in-text reference pointer list item"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b1"
+      },
+      {
+        "@id": "http://purl.org/co/ListItem"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2008/05/skos#note": [
+      {
+        "@language": "en",
+        "@value": "\nAn in-text reference pointer list item can contain only a single in-text reference pointer.\n\nNote that, as specified through the `hasKey` assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.\n"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/co/itemContent"
+      }
+    ]
+  },
+  {
+    "@id": "urn:swrl#p",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Variable"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/hasGlobalCountValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-article\n        c4o:hasGlobalCitationFrequency :my-global-citation-count .\n\n    :my-global-citation-count a c4o:GlobalCitationCount ;\n        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/c4o/GlobalCitationCount"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has global count value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "urn:swrl#r",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Variable"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/pertainsTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-in-text-ref-pointer-list\n        c4o:pertainsTo :my-bibliographic-reference .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between an in-text reference pointer list and the bibliographic reference or references denoted by the in-text reference pointers within that list."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "pertains to"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/hasGlobalCountSource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-article\n        c4o:hasGlobalCitationFrequency :my-global-citation-count .\n\n    :my-global-citation-count a c4o:GlobalCitationCount ;\n        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;\n        c4o:hasGlobalCountSource :my-bibliographic-info-source .\n\n    :my-bibliographic-info-source a c4o:BibliographicInformationSource  ;\n        foaf:homepage <http://scholar.google.com> .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between a global citation count and the bibliographic information source providing the global citation count information for a particular publication on a particular date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/c4o/GlobalCitationCount"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has global count source"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/c4o/BibliographicInformationSource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/co/ListItem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An element belonging to a list."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/co/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "list item"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/InTextReferencePointer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-article\n        frbr:part :my-in-text-ref-pointer , :my-bibliographic-reference .\n\n    :my-in-text-ref-pointer a c4o:InTextReferencePointer  ;\n        c4o:denotes :my-bibliographic-reference ;\n        c4o:hasContext :my-citation-sentence .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "in-text reference pointer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b11"
+      },
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b12"
+      },
+      {
+        "@id": "http://purl.org/vocab/frbr/core#Expression"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://purl.org/spar/c4o/SingleLocationPointerList"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2008/05/skos#note": [
+      {
+        "@language": "en",
+        "@value": "\nThe in-text reference pointer is a textual element, usually embedded at the end of a phrase or sentence within the text of a document, that denotes a specific bibliographic reference present in the reference list of that document. \nFor example, if the item in the reference list is: \n\n    4.  Ko AI, Reis MG, Ribeiro Dourado CM, Johnson WD Jr, Riley LW (1999). Urban epidemic of severe leptospirosis in Brazil. Salvador Leptospirosis Study Group. Lancet 354: 820-825.\n\nThe in-text reference pointer to this paper in a journal article may be manifested in a number of ways:\t\n\n* Numerically, for example by using the numeral 4 in superscript or between square brackets, thus: '[4]'.\n* Or by use of the author names (or the first author's name plus et al.) and the publication year in parentheses, thus: '(Ko et al., 1999)'. \n* Or, less commonly, by the use of a code, e.g. by specifying the first surname letter of the first three author of the cited work followed by the last two digits of the year of publication, this string of characters being enclosed within square brackets, thus: '[KRR99]'.\n\nIf reference pointers are aggregated, e.g. '[4, 5, 6-9]', they may be described by means of the class `c4o:SingleLocationPointerList`.\n"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b11",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/denotes"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b12",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/hasContext"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/collaborator": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "David Shotton (https://orcid.org/0000-0001-5506-523X)"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/date": [
+      {
+        "@value": "2026-08-14"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "\nThe **_Citation Counting and Context Characterization Ontology (C4O)_** allows the characterization of bibliographic citations in terms of their number and their context.\n\nBesides defining reference lists and bibliographic references in a machine-readable form, it is also useful to describe how these references are used in the citing paper. \nIn particular, we would need entities that describe all the items introduced in the situation where a document - i.e., the paper 'Intertextual semantics: a semantics for information design' - cites another - i.e., 'Towards a semantics for XML markup'). Those entities include:\n* in-text reference pointers within the citing paper;\n* links to the bibliographic references denoted by in-text reference pointers;\n* how much a particular document is locally cited by the citing document – i.e., the total number of in-text reference pointers within the citing paper denoting the same bibliographic reference; how much an article is globally cited (according to particular bibliographic citation service, e.g., Google Scholar);\n* the contexts involved in a citation – i.e., the part of the citing article containing a particular in-text reference pointer and the part of the cited article that is relevant to such citation.\n\n![The architecture of C4O.](c4o.png)\n\nC4O has been developed to allow the description of the above entities. \nThis ontology extends [BiRO](http://purl.org/spar/biro) in order to enable the characterisation of bibliographic citations in terms of their presence in an article by means of the following classes:\n* class `c4o:InTextReferencePointer ` - an in-text reference pointer is a textual device denoting (`c4o:denotes `) a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence;\n* class `c4o:InTextReferencePointerList` - a list containing (through the chain `co:item` and `co:itemContent`) only in-text reference pointers denoting the specific bibliographic references to which the list pertains (`c4o:pertains`). Such a list cannot contain more than one item containing the same in-text reference pointer;\n* class `c4o:SingleReferencePointerList ` - defined as subclass of `c4o:InTextReferencePointerList`, it is an in-text reference pointer list that pertains to exactly one bibliographic reference;\n* class `c4o:SingleLocationPointerList ` - defined as subclass of `c4o:InTextReferencePointerList`, it is an in-text reference pointer list that pertains to all the in-text reference pointers to two or more references occurring at a single location in the text of the citing work;\n* class `c4o:GlobalCitationCount` - the number of times a work has been cited globally (`c4o:hasGlobalCountValue`), as determined from a particular bibliographic information source (`c4o:hasGlobalCountSource`) on a particular date (`c4o:hasGlobalCountDate`).\n\nIn addition, C4O provides the ontological structures which allow one to record the number of in-text citations (`c4o:hasInTextCitationFrequency`) i.e., the number of in-text reference pointers to a single reference in the reference list of the citing article.\n\n![A detail on modelling in-text reference pointers using BiRO.](c4o-pointer.png)\n\nMoreover, C4O enables ontological descriptions of the context where an in-text reference pointer appears in the citing document, and allows one to relate that context to relevant textual passages in the cited document.\n\n## Examples of use\n\nIn the following subsections, we introduce some examples to showcase how to use C4O. \n\nThe prefixes that are used in all the examples provided below are defined as follows:\n\n    @prefix : <http://www.sparontologies.net/example/> .\n    @prefix biro: <http://purl.org/spar/biro/> .\n    @prefix c4o: <http://purl.org/spar/biro/> .\n    @prefix dcterms: <http://purl.org/dc/terms/> .\n    @prefix doco: <http://purl.org/spar/doco/> .\n    @prefix frbr: <http://purl.org/vocab/frbr/core#> .\n    @prefix foaf: <http://xmlns.com/foaf/0.1/> .\n    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n### Describing citation contexts\n\nIn a particular sentence of the paper entitled 'Intertextual semantics: A semantics for information design' there is a citation to the paper 'Towards a semantics for XML markup' made through a in-text reference pointer to a specific bibliographic reference.\n\nC4O enables ontological descriptions of the citation context where an in-text reference pointer appears in the citing document, and allows one to relate that context to relevant textual passages in the cited document.\n\n    <http://dx.doi.org/10.1002/asi.21134>\n        frbr:part :in-text-renear02 , :renear02 .\n\n    :in-text-renear02 a c4o:InTextReferencePointer  ;\n        c4o:denotes  :renear02 ;\n        c4o:hasContext  :citation-sentence .\n\n    :renear02 a biro:BibliographicReference ;\n        dcterms:bibliographicCitation\n            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).\n            Towards a semantics for XML markup. In E. Mudson (Chair),\n            Proceedings of the ACM Symposium on Document Engineering,\n            (pp. 119-126). New York: ACM Press.' ;\n        biro:references <http://dx.doi.org/10.1145/585058.585081> .\n\n    :citation-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)\n            proposed a formal semantic approach for structured documents.' .\n\n    <http://dx.doi.org/10.1145/585058.585081>\n        frbr:part :cited-sentence .\n\n    :cited-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Markup semantics are modeled computationally by applying\n            knowledge representation technologies to the problem of making\n            those structures, relationships, and properties explicit.' ;\n        c4o:isRelevantTo  :citation-sentence .\n\n### Keeping track of global citation count \n\nC4O allows one to record the number of citations a cited entity has received globally (`c4o:hasGlobalCitationCount`), as determined by a bibliographic information resource (`c4o:hasGlobalCountSource`) such as Google Scholar, Scopus or Web of Knowledge on a particular date (`c4o:hasGlobalCountDate`).\n\nFor instance we can write a set of assertions according to C4O that describe how many times the reference - contained in the paper 'Intertextual semantics: A semantics for information design' and referring to the paper 'Towards a semantics for XML markup' - is used within the citing article and how much the cited article is globally cited according to Google Scholar.\n\n    <http://dx.doi.org/10.1002/asi.21134>\n        frbr:part :renear02 .\n\n    :renear02 a biro:BibliographicReference ;\n        dcterms:bibliographicCitation\n            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).\n            Towards a semantics for XML markup. In E. Mudson (Chair),\n            Proceedings of the ACM Symposium on Document Engineering,\n            (pp. 119-126). New York: ACM Press.' ;\n        biro:references <http://dx.doi.org/10.1145/585058.585081> ;\n        c4o:hasInTextCitationFrequency  \"1\"^^xsd:nonNegativeInteger .\n\n    <http://dx.doi.org/10.1145/585058.585081>\n        c4o:hasGlobalCitationFrequency :g-citation-2014-03-17 .\n\n    :g-citation-2014-03-17 a c4o:GlobalCitationCount ;\n        c4o:hasGlobalCountDate '2014-03-17'^^xsd:date ;\n        c4o:hasGlobalCountSource :google-scholar ;\n        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .\n\n    :google-scholar a c4o:BibliographicInformationSource  ;\n        foaf:homepage <http://scholar.google.com> .\n\n## Competency Questions\n\nBiRO can be used for answering several questions related to bibliographic records and references.\nIn the following subsections, some of them are introduced together with their respective SPARQL queries. \n\nThe prefixes that are used in all the SPARQL queries provided below are defined as follows:\n\n    PREFIX biro: <http://purl.org/spar/biro/>\n    PREFIX co: <http://purl.org/co/>\n    PREFIX dcterms: <http://purl.org/dc/terms/>\n    PREFIX frbr: <http://purl.org/vocab/frbr/core#>>\n    PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n    PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>\n\n### CQ1\n\nWhich bibliographic references and citation contexts are associated with an in-text reference pointer?\n\n    SELECT ?inTextPointer ?reference ?context ?contextContent\n    WHERE {\n        ?inTextPointer a c4o:InTextReferencePointer  ;\n            c4o:denotes  ?reference ;\n            c4o:hasContext  ?context .\n        OPTIONAL { ?context c4o:hasContent ?contextContent . }\n    }\n\n### CQ2\n\nWhich textual passages in a cited document are relevant to a citing context?\n\n    SELECT ?citingContext ?citingContent ?citedPassage ?citedContent\n    WHERE {\n        ?citedPassage c4o:isRelevantTo  ?citingContext .\n        OPTIONAL { ?citingContext c4o:hasContent ?citingContent . }\n        OPTIONAL { ?citedPassage c4o:hasContent ?citedContent . }\n    }\n\n### CQ3\n\nWhat is the in-text citation frequency of a bibliographic reference within a citing document?\n\n    SELECT ?reference ?frequency ?citedWork\n    WHERE {\n        ?reference a biro:BibliographicReference ;\n            c4o:hasInTextCitationFrequency  ?frequency .\n        OPTIONAL { ?reference biro:references ?citedWork . }\n    }\n\n### CQ4\n\nWhat is the global citation count of a document, including the source and measurement date?\n\n    SELECT ?document ?citationCount ?countValue ?source ?date\n    WHERE {\n        ?document c4o:hasGlobalCitationFrequency ?citationCount .\n        ?citationCount a c4o:GlobalCitationCount ;\n            c4o:hasGlobalCountValue  ?countValue ;\n            c4o:hasGlobalCountSource ?source ;\n            c4o:hasGlobalCountDate ?date .\n    }\n\n### CQ5\n\nWhat information sources are used to track global citation counts, along with their homepages?\n\n    SELECT ?source ?homepage\n    WHERE {\n        ?source a c4o:BibliographicInformationSource  .\n        OPTIONAL { ?source foaf:homepage ?homepage . }\n    }\n\n"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "en",
+        "@value": "The Citation Counting and Context Characterization Ontology (C4O)"
+      }
+    ],
+    "http://purl.org/dc/terms/bibliographicCitation": [
+      {
+        "@value": "Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. (2014). Describing bibliographic references in RDF. In Garcia Castro, A., Lange, C., Lord, P., Stevens, R. (Eds.), Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014), CEUR Workshop Proceedings 1155. Aachen, Germany: CEUR-WS.org. http://ceur-ws.org/Vol-1155/paper-05.pdf (Open Access)"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@value": "2013-05-11"
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@value": "2018-06-22"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@value": "2026-08-14"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "https://ror.org/00wb4mk85"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://github.com/sparontologies/c4o/docs/cq.md"
+      }
+    ],
+    "http://purl.org/ontology/bibo/doi": [
+      {
+        "@value": "https://doi.org/10.25504/FAIRsharing.beb855"
+      }
+    ],
+    "http://purl.org/ontology/bibo/status": [
+      {
+        "@id": "http://purl.org/ontology/bibo/status/published"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@language": "en",
+        "@value": "c4o"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@language": "en",
+        "@value": "http://purl.org/spar/c4o"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Citation Counting and Context Characterization Ontology (C4O)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "http://www.sparontologies.net/ontologies/c4o"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#backwardCompatibleWith": [
+      {
+        "@id": "http://purl.org/spar/c4o/2018-06-22"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "http://purl.org/spar/biro"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#priorVersion": [
+      {
+        "@id": "http://purl.org/spar/c4o/2018-06-22"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "http://purl.org/spar/c4o/2026-08-14"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@language": "en",
+        "@value": "1.3.1"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/logo": [
+      {
+        "@id": "https://github.com/SPAROntologies/c4o/blob/master/spar.png"
+      }
+    ],
+    "https://schema.org/codeRepository": [
+      {
+        "@id": "https://github.com/SPAROntologies/c4o"
+      }
+    ],
+    "https://schema.org/image": [
+      {
+        "@id": "https://github.com/SPAROntologies/c4o/blob/master/docs/current/c4o.png"
+      }
+    ],
+    "https://schema.org/includedInDataCatalog": [
+      {
+        "@id": "https://fairsharing.org/"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@language": "en",
+        "@value": "semantic publishing"
+      },
+      {
+        "@language": "en",
+        "@value": "scholarly publishing"
+      },
+      {
+        "@language": "en",
+        "@value": "bibliographic references"
+      },
+      {
+        "@language": "en",
+        "@value": "scientometrics"
+      },
+      {
+        "@language": "en",
+        "@value": "bibliometrics"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/co/itemContent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The link to the actual resource to which the item refers."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/co/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has item content"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/co/item",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The link to every item of a bag."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/co/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has item"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/hasGlobalCountDate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-article\n        c4o:hasGlobalCitationFrequency :my-global-citation-count .\n\n    :my-global-citation-count a c4o:GlobalCitationCount ;\n        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;\n        c4o:hasGlobalCountDate '2014-03-17'^^xsd:date .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The date on which the global citation count of the cited entity was recorded from a named bibliographic information source."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/c4o/GlobalCitationCount"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has global count date"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#Endeavour",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The different aspects of user interests in the products of intellectual or artistic artifact."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "endeavour"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/co/List",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An ordered array of items, that can be present in multiple copies."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/co/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "list"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#topDataProperty",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ]
+  },
+  {
+    "@id": "urn:swrl#l",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Variable"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/biro/BibliographicReference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An expression of a bibliographic record in a specific format, that references a particular textual or data publication (or a work in preparation for publication). Each bibliographic reference is a list of items containing entities that describe aspects of the referenced work - for example authors, title, journal, publication year - selected from the bibliographic record."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/biro/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "bibliographic reference"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/isDenotedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        dcterms:bibliographicCitation\n            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).\n            Towards a semantics for XML markup. In E. Mudson (Chair),\n            Proceedings of the ACM Symposium on Document Engineering,\n            (pp. 119-126). New York: ACM Press.' ;\n        c4o:isDenotedBy :my-in-text-reference-pointer ;\n        biro:references :my-article .\n\n    :my-in-text-reference-pointer a c4o:InTextReferencePointer .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is denoted by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/InTextReferencePointerList",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-in-text-ref-pointer-list\n        c4o:pertainsTo :my-bibliographic-reference ;\n        co:item :my-in-text-ref-pointer-list-item .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "in-text reference pointer list"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b9"
+      },
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b10"
+      },
+      {
+        "@id": "http://purl.org/co/List"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2008/05/skos#note": [
+      {
+        "@language": "en",
+        "@value": "An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references."
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/pertainsTo"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b10",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerListItem"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/co/item"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/SingleLocationPointerList",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-single-loc-pointer-list\n        c4o:pertainsTo :my-bibliographic-reference, :my-other-bibliographic-reference ;\n        c4o:hasContext :my-sentence .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An in-text reference pointer list that pertains to all the in-text reference pointers to two or more references occurring at a single location in the text of the citing work."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "single location pointer list"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b7"
+      },
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b8"
+      },
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+      },
+      {
+        "@id": "http://purl.org/vocab/frbr/core#Expression"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://purl.org/spar/c4o/SingleReferencePointerList"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2008/05/skos#note": [
+      {
+        "@language": "en",
+        "@value": "A single location pointer list pertains to two or more references occurring at a single location in the text of the citing work - e.g. '[3,4,9]' or '[7-12]'."
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b7",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/hasContext"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b8",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "2"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/pertainsTo"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/BibliographicInformationSource",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-article\n        c4o:hasGlobalCitationFrequency :my-global-citation-count .\n\n    :my-global-citation-count a c4o:GlobalCitationCount ;\n        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;\n        c4o:hasGlobalCountSource :my-bibliographic-info-source .\n\n    :my-bibliographic-info-source a c4o:BibliographicInformationSource  ;\n        foaf:homepage <http://scholar.google.com> .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A source of information about bibliographic citations, such as Google Scholar, Web of Science or Scopus."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "bibliographic information source"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://purl.org/spar/c4o/GlobalCitationCount"
+      },
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      },
+      {
+        "@id": "http://purl.org/spar/c4o/SingleLocationPointerList"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionInfo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/creator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/SingleReferencePointerList",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-single-ref-pointer-list-item\n        c4o:pertainsTo :my-bibliographic-reference .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An in-text reference pointer list that pertains to exactly one bibliographic reference."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "single reference pointer list"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b2"
+      },
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2008/05/skos#note": [
+      {
+        "@language": "en",
+        "@value": "\nA single reference pointer list pertains only to one bibliographic reference, being a list of all the in-text reference pointers to that single reference to be found in the citing work.\n\nNote that this semantic constraint is handled by the combined use of a particular restriction of this class, i.e. that the list pertains to exactly one `owl:Thing`, and that the following SWRL rule applies:\n\n    c4o:InTextReferencePointerList(?l), \n    c4o:denotes (?p, ?r), \n    swan:item(?l, ?i), \n    swan:itemContent(?i, ?p) -> \n    c4o:pertainsTo (?l, ?r)\n"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/pertainsTo"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/isRelevantTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-cited-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Markup semantics are modeled computationally by applying\n            knowledge representation technologies to the problem of making\n            those structures, relationships, and properties explicit.' ;\n        c4o:isRelevantTo :my-citation-sentence .\n\n    :my-citation-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)\n            proposed a formal semantic approach for structured documents.' .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A relationship between two FRBR expressions, according to which one is declared to be of rhetorical relevance to another, for instance the textual context of a particular in-text reference pointer in one document is relevant to a section of text within the published document that is referenced by the bibliographic reference denoted by the in-text reference pointer, and vice versa that the converse relevance also exists."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is relevant to"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/date",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/hasContext",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-article\n        frbr:part :in-text-reference-pointer , :my-bibliographic-reference .\n\n    :in-text-reference-pointer a c4o:InTextReferencePointer  ;\n        c4o:denotes :my-bibliographic-reference ;\n        c4o:hasContext  :my-citation-sentence .\n\n    :my-citation-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)\n            proposed a formal semantic approach for structured documents.' .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has context"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b3"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2008/05/skos#note": [
+      {
+        "@language": "en",
+        "@value": "Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`."
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://purl.org/vocab/frbr/core#Expression"
+          },
+          {
+            "@id": "_:nbe907eaac5a34be089dc81e641c920f8b4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/hasContent"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#Thing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/title",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b13",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#Imp"
+    ],
+    "http://www.w3.org/2003/11/swrl#body": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b14"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#head": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b20"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b14",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b15"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b16"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b15",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#ClassAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#l"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#classPredicate": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b16",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b17"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b18"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b17",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#l"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#argument2": [
+      {
+        "@id": "urn:swrl#p"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+      {
+        "@id": "http://purl.org/co/element"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b18",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b19"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b19",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#p"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#argument2": [
+      {
+        "@id": "urn:swrl#r"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+      {
+        "@id": "http://purl.org/spar/c4o/denotes"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b20",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#AtomList"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#first": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b21"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest": [
+      {
+        "@list": []
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b21",
+    "@type": [
+      "http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"
+    ],
+    "http://www.w3.org/2003/11/swrl#argument1": [
+      {
+        "@id": "urn:swrl#l"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#argument2": [
+      {
+        "@id": "urn:swrl#r"
+      }
+    ],
+    "http://www.w3.org/2003/11/swrl#propertyPredicate": [
+      {
+        "@id": "http://purl.org/spar/c4o/pertainsTo"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/co/element",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The link to the members of a collection."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/co/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has element"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/description",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/hasContent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Markup semantics are modeled computationally by applying\n            knowledge representation technologies to the problem of making\n            those structures, relationships, and properties explicit.' .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The textual content of a particular FRBR expression."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#Expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has content"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topDataProperty"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/denotes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        dcterms:bibliographicCitation\n            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).\n            Towards a semantics for XML markup. In E. Mudson (Chair),\n            Proceedings of the ACM Symposium on Document Engineering,\n            (pp. 119-126). New York: ACM Press.' ;\n        biro:references :my-article .\n\n    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;\n        c4o:denotes :my-bibliographic-reference .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between an in-text reference pointer and the bibliographic reference it points to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "denotes"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "http://purl.org/spar/c4o/isDenotedBy"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/hasGlobalCitationFrequency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-article\n        c4o:hasGlobalCitationFrequency :my-global-citation-count .\n\n    :my-global-citation-count a c4o:GlobalCitationCount ;\n        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The relation between a publication entity and its global citation count, according to a particular information source on a particular date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#Endeavour"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has global citation frequency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/c4o/GlobalCitationCount"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/GlobalCitationCount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-global-citation-count a c4o:GlobalCitationCount ;\n        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The number of times a work has been cited globally, as determined from a particular bibliographic information source on a particular date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "global citation count"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      },
+      {
+        "@id": "http://purl.org/spar/c4o/SingleLocationPointerList"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/spar/c4o/hasInTextCitationFrequency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-article\n        frbr:part :my-bibliographic-reference .\n\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        c4o:hasInTextCitationFrequency  '1'^^xsd:nonNegativeInteger .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The number of separate in-text reference pointers existing within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has in text citation frequency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/frbr/core#Expression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\nThe intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.\n\nAn expression is the specific intellectual or artistic form that a work takes each time it is 'realized'. \nExpression encompasses, for example, the specific words, sentences, paragraphs, etc. that result from the realization of a work in the form of a text, or the particular sounds, phrasing, etc. resulting from the realization of a musical work.\n        "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/vocab/frbr/core#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/vocab/vann/preferredNamespaceURI",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/elements/1.1/rights",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  }
+]
