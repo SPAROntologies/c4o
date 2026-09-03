@@ -1,19 +1,23 @@
-@prefix : <http://purl.org/spar/c4o/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix biro: <http://purl.org/spar/biro/> .
 @prefix co: <http://purl.org/co/> .
-@prefix collections: <http://swan.mindinformatics.org/ontologies/1.2/collections/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix frbr: <http://purl.org/vocab/frbr/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix owlapi: <http://www.semanticweb.org/owlapi#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos1: <http://www.w3.org/2008/05/skos#> .
+@prefix skos: <http://www.w3.org/2008/05/skos#> .
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
 @prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@base <http://purl.org/spar/c4o/> .
 
 dc:creator a owl:AnnotationProperty .
 
@@ -26,79 +30,324 @@ dc:rights a owl:AnnotationProperty .
 dc:title a owl:AnnotationProperty .
 
 <http://purl.org/spar/c4o> a owl:Ontology ;
-    dc:creator "David Shotton"^^xsd:string,
-        "Silvio Peroni"^^xsd:string ;
-    dc:date "2018-06-22" ;
-    dc:description <http://purl.org/spar/c4o/CitationCounting%20module.png>,
-        """C4O, the Citation Counting and Context Characterization Ontology (C4O) allows the characterization of bibliographic citations in terms of their number and their context.
+    rdfs:label "Citation Counting and Context Characterization Ontology (C4O)"@en ;
+    dc:creator "David Shotton (https://orcid.org/0000-0001-5506-523X)"^^xsd:string ,
+        "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"^^xsd:string ;
+    dc:collaborator "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^xsd:string ;
+    dc:date "2026-08-14" ;
+    dc:description """
+The **_Citation Counting and Context Characterization Ontology (C4O)_** allows the characterization of bibliographic citations in terms of their number and their context.
 
-It provides the ontological structures to permit the number of in-text citations of a cited source (i.e. the number of in-text reference pointers to a single reference in the citing article's reference list) to be recorded, and also the number of citations a cited entity has received globally, as determined by a bibliographic information resource such as Google Scholar, Scopus or Web of Knowledge on a particular date.
+Besides defining reference lists and bibliographic references in a machine-readable form, it is also useful to describe how these references are used in the citing paper. 
+In particular, we would need entities that describe all the items introduced in the situation where a document - i.e., the paper 'Intertextual semantics: a semantics for information design' - cites another - i.e., 'Towards a semantics for XML markup'). Those entities include:
+* in-text reference pointers within the citing paper;
+* links to the bibliographic references denoted by in-text reference pointers;
+* how much a particular document is locally cited by the citing document – i.e., the total number of in-text reference pointers within the citing paper denoting the same bibliographic reference; how much an article is globally cited (according to particular bibliographic citation service, e.g., Google Scholar);
+* the contexts involved in a citation – i.e., the part of the citing article containing a particular in-text reference pointer and the part of the cited article that is relevant to such citation.
 
-Moreover, it enables ontological descriptions of the context within the citing document in which an in-text reference pointer appears, and permits that context to be related to relevant textual passages in the cited document.
+![](c4o.png)
+
+C4O has been developed to allow the description of the above entities. 
+This ontology extends [BiRO](http://purl.org/spar/biro) in order to enable the characterisation of bibliographic citations in terms of their presence in an article by means of the following classes:
+* class `c4o:InTextReferencePointer ` - an in-text reference pointer is a textual device denoting (`c4o:denotes `) a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence;
+* class `c4o:InTextReferencePointerList` - a list containing (through the chain `co:item` and `co:itemContent`) only in-text reference pointers denoting the specific bibliographic references to which the list pertains (`c4o:pertains`). Such a list cannot contain more than one item containing the same in-text reference pointer;
+* class `c4o:SingleReferencePointerList ` - defined as subclass of `c4o:InTextReferencePointerList`, it is an in-text reference pointer list that pertains to exactly one bibliographic reference;
+* class `c4o:SingleLocationPointerList ` - defined as subclass of `c4o:InTextReferencePointerList`, it is an in-text reference pointer list that pertains to all the in-text reference pointers to two or more references occurring at a single location in the text of the citing work;
+* class `c4o:GlobalCitationCount` - the number of times a work has been cited globally (`c4o:hasGlobalCountValue`), as determined from a particular bibliographic information source (`c4o:hasGlobalCountSource`) on a particular date (`c4o:hasGlobalCountDate`).
+
+In addition, C4O provides the ontological structures which allow one to record the number of in-text citations (`c4o:hasInTextCitationFrequency`) i.e., the number of in-text reference pointers to a single reference in the reference list of the citing article.
+
+![](c4o-pointer.png)
+
+Moreover, C4O enables ontological descriptions of the context where an in-text reference pointer appears in the citing document, and allows one to relate that context to relevant textual passages in the cited document.
+
+## Examples of use
+
+In the following subsections, we introduce some examples to showcase how to use C4O. 
+
+The prefixes that are used in all the examples provided below are defined as follows:
+
+    @prefix : <http://www.sparontologies.net/example/> .
+    @prefix biro: <http://purl.org/spar/biro/> .
+    @prefix c4o: <http://purl.org/spar/biro/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+    @prefix doco: <http://purl.org/spar/doco/> .
+    @prefix frbr: <http://purl.org/vocab/frbr/core#> .
+    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Describing citation contexts
+
+In a particular sentence of the paper entitled 'Intertextual semantics: A semantics for information design' there is a citation to the paper 'Towards a semantics for XML markup' made through a in-text reference pointer to a specific bibliographic reference.
+
+C4O enables ontological descriptions of the citation context where an in-text reference pointer appears in the citing document, and allows one to relate that context to relevant textual passages in the cited document.
+
+    <http://dx.doi.org/10.1002/asi.21134>
+        frbr:part :in-text-renear02 , :renear02 .
+
+    :in-text-renear02 a c4o:InTextReferencePointer  ;
+        c4o:denotes  :renear02 ;
+        c4o:hasContext  :citation-sentence .
+
+    :renear02 a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.' ;
+        biro:references <http://dx.doi.org/10.1145/585058.585081> .
+
+    :citation-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)
+            proposed a formal semantic approach for structured documents.' .
+
+    <http://dx.doi.org/10.1145/585058.585081>
+        frbr:part :cited-sentence .
+
+    :cited-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Markup semantics are modeled computationally by applying
+            knowledge representation technologies to the problem of making
+            those structures, relationships, and properties explicit.' ;
+        c4o:isRelevantTo  :citation-sentence .
+
+### Keeping track of global citation count 
+
+C4O allows one to record the number of citations a cited entity has received globally (`c4o:hasGlobalCitationCount`), as determined by a bibliographic information resource (`c4o:hasGlobalCountSource`) such as Google Scholar, Scopus or Web of Knowledge on a particular date (`c4o:hasGlobalCountDate`).
+
+For instance we can write a set of assertions according to C4O that describe how many times the reference - contained in the paper 'Intertextual semantics: A semantics for information design' and referring to the paper 'Towards a semantics for XML markup' - is used within the citing article and how much the cited article is globally cited according to Google Scholar.
+
+    <http://dx.doi.org/10.1002/asi.21134>
+        frbr:part :renear02 .
+
+    :renear02 a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.' ;
+        biro:references <http://dx.doi.org/10.1145/585058.585081> ;
+        c4o:hasInTextCitationFrequency  "1"^^xsd:nonNegativeInteger .
+
+    <http://dx.doi.org/10.1145/585058.585081>
+        c4o:hasGlobalCitationFrequency :g-citation-2014-03-17 .
+
+    :g-citation-2014-03-17 a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountDate '2014-03-17'^^xsd:date ;
+        c4o:hasGlobalCountSource :google-scholar ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .
+
+    :google-scholar a c4o:BibliographicInformationSource  ;
+        foaf:homepage <http://scholar.google.com> .
+
+## Competency Questions
+
+BiRO can be used for answering several questions related to bibliographic records and references.
+In the following subsections, some of them are introduced together with their respective SPARQL queries. 
+
+The prefixes that are used in all the SPARQL queries provided below are defined as follows:
+
+    PREFIX biro: <http://purl.org/spar/biro/>
+    PREFIX co: <http://purl.org/co/>
+    PREFIX dcterms: <http://purl.org/dc/terms/>
+    PREFIX frbr: <http://purl.org/vocab/frbr/core#>>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX literal: <http://www.essepuntato.it/2010/06/literalreification/>
+
+### CQ1
+
+Which bibliographic references and citation contexts are associated with an in-text reference pointer?
+
+    SELECT ?inTextPointer ?reference ?context ?contextContent
+    WHERE {
+        ?inTextPointer a c4o:InTextReferencePointer  ;
+            c4o:denotes  ?reference ;
+            c4o:hasContext  ?context .
+        OPTIONAL { ?context c4o:hasContent ?contextContent . }
+    }
+
+### CQ2
+
+Which textual passages in a cited document are relevant to a citing context?
+
+    SELECT ?citingContext ?citingContent ?citedPassage ?citedContent
+    WHERE {
+        ?citedPassage c4o:isRelevantTo  ?citingContext .
+        OPTIONAL { ?citingContext c4o:hasContent ?citingContent . }
+        OPTIONAL { ?citedPassage c4o:hasContent ?citedContent . }
+    }
+
+### CQ3
+
+What is the in-text citation frequency of a bibliographic reference within a citing document?
+
+    SELECT ?reference ?frequency ?citedWork
+    WHERE {
+        ?reference a biro:BibliographicReference ;
+            c4o:hasInTextCitationFrequency  ?frequency .
+        OPTIONAL { ?reference biro:references ?citedWork . }
+    }
+
+### CQ4
+
+What is the global citation count of a document, including the source and measurement date?
+
+    SELECT ?document ?citationCount ?countValue ?source ?date
+    WHERE {
+        ?document c4o:hasGlobalCitationFrequency ?citationCount .
+        ?citationCount a c4o:GlobalCitationCount ;
+            c4o:hasGlobalCountValue  ?countValue ;
+            c4o:hasGlobalCountSource ?source ;
+            c4o:hasGlobalCountDate ?date .
+    }
+
+### CQ5
+
+What information sources are used to track global citation counts, along with their homepages?
+
+    SELECT ?source ?homepage
+    WHERE {
+        ?source a c4o:BibliographicInformationSource  .
+        OPTIONAL { ?source foaf:homepage ?homepage . }
+    }
+
 """@en ;
-    dc:rights "This work is distributed under a Creative Commons Attribution 4.0 International license (https://creativecommons.org/licenses/by/4.0/legalcode)."@en ;
-    dc:title "C4O, the Citation Counting and Context Characterization Ontology"@en ;
-    rdfs:comment """The Citation Counting and Context Characterisation Ontology (C4O) is an ontology that permits the number of in-text citations of a cited source to be recorded, together with their textual citation contexts, along with the number of citations a cited entity has received globally on a particular date.
-
-**URL:** http://purl.org/spar/c4o
-
-**Creators**: [David Shotton](http://orcid.org/0000-0001-5506-523X), [Silvio Peroni](http://orcid.org/0000-0003-0530-4305)
-
-**License:** [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)
-
-**Website:** http://www.sparontologies.net/ontologies/c4o
-
-**Cite as:** Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. (2014). Describing bibliographic references in RDF. In Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014). http://ceur-ws.org/Vol-1155/paper-05.pdf"""@en ;
+    dc:title "The Citation Counting and Context Characterization Ontology (C4O)"@en ;
     owl:imports <http://purl.org/spar/biro> ;
-    owl:priorVersion <http://purl.org/spar/c4o/2013-05-11> ;
-    owl:versionIRI <http://purl.org/spar/c4o/2018-06-22> ;
-    owl:versionInfo "1.2"@en .
+    owl:backwardCompatibleWith c4o:2018-06-22 ;
+    owl:priorVersion c4o:2018-06-22 ;
+    owl:versionIRI c4o:2026-08-14 ;
+    dcterms:bibliographicCitation "Di Iorio, A., Nuzzolese, A. G., Peroni, S., Shotton, D., Vitali, F. (2014). Describing bibliographic references in RDF. In Garcia Castro, A., Lange, C., Lord, P., Stevens, R. (Eds.), Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014), CEUR Workshop Proceedings 1155. Aachen, Germany: CEUR-WS.org. http://ceur-ws.org/Vol-1155/paper-05.pdf (Open Access)" ;
+    dcterms:created "2013-05-11" ;
+    dcterms:issued "2018-06-22" ;
+    dcterms:modified "2026-08-14" ;
+    bibo:doi "https://doi.org/10.25504/FAIRsharing.beb855" ;
+    vann:preferredNamespacePrefix "c4o"@en ;
+    vann:preferredNamespaceUri "http://purl.org/spar/c4o"@en ;
+    rdfs:seeAlso <http://www.sparontologies.net/ontologies/c4o> ;
+    dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher <https://ror.org/00wb4mk85> ;
+    dcterms:source <https://github.com/sparontologies/c4o/docs/cq.md> ;
+    foaf:logo <https://github.com/SPAROntologies/c4o/blob/master/spar.png> ;
+    schema:codeRepository <https://github.com/SPAROntologies/c4o> ;
+    schema:includedInDataCatalog <https://fairsharing.org/> ;
+    bibo:status <http://purl.org/ontology/bibo/status/published> ;
+    owl:versionInfo "1.3.1"@en ;
+    schema:keywords "semantic publishing"@en ,
+        "scholarly publishing"@en ,
+        "bibliographic references"@en ,
+        "scientometrics"@en ,
+        "bibliometrics"@en ;
+    schema:image <https://github.com/SPAROntologies/c4o/blob/master/docs/current/c4o.png> .
 
-:hasGlobalCitationFrequency a owl:ObjectProperty ;
+c4o:hasGlobalCitationFrequency a owl:ObjectProperty ;
     rdfs:label "has global citation frequency"@en ;
-    rdfs:comment "A property linking a publication entity to the property c40:GlobalCitationCount that specify how many times a work has been cited by others, according to a particular information source on a particular date."@en ;
+    rdfs:comment "The relation between a publication entity and its global citation count, according to a particular information source on a particular date."@en ;
     rdfs:domain frbr:Endeavour ;
-    rdfs:range :GlobalCitationCount ;
-    rdfs:subPropertyOf owl:topObjectProperty .
+    rdfs:range c4o:GlobalCitationCount ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
 
-:hasGlobalCountDate a owl:DatatypeProperty ;
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+c4o:hasGlobalCountDate a owl:DatatypeProperty ;
     rdfs:label "has global count date"@en ;
     rdfs:comment "The date on which the global citation count of the cited entity was recorded from a named bibliographic information source."@en ;
-    rdfs:domain :GlobalCitationCount ;
-    rdfs:range xsd:date .
+    rdfs:domain c4o:GlobalCitationCount ;
+    rdfs:range xsd:date ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
 
-:hasGlobalCountSource a owl:ObjectProperty ;
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;
+        c4o:hasGlobalCountDate '2014-03-17'^^xsd:date .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+c4o:hasGlobalCountSource a owl:ObjectProperty ;
     rdfs:label "has global count source"@en ;
-    rdfs:comment "A property linking the property c40:GlobalCitationCount to the bibliographic information source providing the global citation count information for a particular publication on a particular date."@en ;
-    rdfs:domain :GlobalCitationCount ;
-    rdfs:range :BibliographicInformationSource ;
-    rdfs:subPropertyOf owl:topObjectProperty .
+    rdfs:comment "The relation between a global citation count and the bibliographic information source providing the global citation count information for a particular publication on a particular date."@en ;
+    rdfs:domain c4o:GlobalCitationCount ;
+    rdfs:range c4o:BibliographicInformationSource  ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
 
-:hasGlobalCountValue a owl:DatatypeProperty ;
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;
+        c4o:hasGlobalCountSource :my-bibliographic-info-source .
+
+    :my-bibliographic-info-source a c4o:BibliographicInformationSource  ;
+        foaf:homepage <http://scholar.google.com> .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+c4o:hasGlobalCountValue  a owl:DatatypeProperty ;
     rdfs:label "has global count value"@en ;
     rdfs:comment "An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date."@en ;
-    rdfs:domain :GlobalCitationCount ;
-    rdfs:range xsd:nonNegativeInteger .
+    rdfs:domain c4o:GlobalCitationCount ;
+    rdfs:range xsd:nonNegativeInteger ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
 
-:hasInTextCitationFrequency a owl:DatatypeProperty,
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+c4o:hasInTextCitationFrequency  a owl:DatatypeProperty,
         owl:FunctionalProperty ;
     rdfs:label "has in text citation frequency"@en ;
-    rdfs:comment "This property allows one to specify how many separate in-text reference pointers exist within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "@en ;
+    rdfs:comment "The number of separate in-text reference pointers existing within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "@en ;
     rdfs:domain biro:BibliographicReference ;
-    rdfs:range xsd:nonNegativeInteger .
+    rdfs:range xsd:nonNegativeInteger ;
+    vann:example """
+    :my-article
+        frbr:part :my-bibliographic-reference .
 
-:isRelevantTo a owl:ObjectProperty,
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        c4o:hasInTextCitationFrequency  '1'^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+c4o:isRelevantTo  a owl:ObjectProperty,
         owl:SymmetricProperty ;
     rdfs:label "is relevant to"@en ;
-    rdfs:comment "A property allowing one FRBR expression to be declared to be of rhetorical relevance to another, for instance that the textual context of a particular in-text reference pointer in one document is relevant to a section of text within the published document that is referenced by the bibliographic reference denoted by the in-text reference pointer, and vice versa that the converse relevance also exists."@en ;
+    rdfs:comment "A relationship between two FRBR expressions, according to which one is declared to be of rhetorical relevance to another, for instance the textual context of a particular in-text reference pointer in one document is relevant to a section of text within the published document that is referenced by the bibliographic reference denoted by the in-text reference pointer, and vice versa that the converse relevance also exists."@en ;
     rdfs:domain frbr:Expression ;
     rdfs:range frbr:Expression ;
-    rdfs:subPropertyOf owl:topObjectProperty .
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vann:example """
+    :my-cited-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Markup semantics are modeled computationally by applying
+            knowledge representation technologies to the problem of making
+            those structures, relationships, and properties explicit.' ;
+        c4o:isRelevantTo :my-citation-sentence .
 
-vann:preferredNamespaceURI a owl:AnnotationProperty ;
-    rdfs:label "http://purl.org/vocab/vann/preferredNamespaceURI" .
+    :my-citation-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)
+            proposed a formal semantic approach for structured documents.' .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
-owlapi:nodeID a owl:AnnotationProperty .
+vann:preferredNamespaceURI a owl:AnnotationProperty .
 
 rdfs:comment a owl:AnnotationProperty .
 
@@ -108,159 +357,321 @@ owl:Thing a owl:Class .
 
 owl:versionInfo a owl:AnnotationProperty .
 
-:BibliographicInformationSource a owl:Class ;
+c4o:BibliographicInformationSource  a owl:Class ;
     rdfs:label "bibliographic information source"@en ;
     rdfs:comment "A source of information about bibliographic citations, such as Google Scholar, Web of Science or Scopus."@en ;
-    owl:disjointWith :GlobalCitationCount,
-        :InTextReferencePointer,
-        :SingleLocationPointerList .
+    owl:disjointWith c4o:GlobalCitationCount ,
+        c4o:InTextReferencePointer  ,
+        c4o:SingleLocationPointerList ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
 
-:InTextReferencePointerListItem a owl:Class ;
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;
+        c4o:hasGlobalCountSource :my-bibliographic-info-source .
+
+    :my-bibliographic-info-source a c4o:BibliographicInformationSource  ;
+        foaf:homepage <http://scholar.google.com> .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+c4o:InTextReferencePointerListItem a owl:Class ;
     rdfs:label "in-text reference pointer list item"@en ;
-    dc:description """An in-text reference pointer list item can contain only a single in-text reference pointer.
+    skos:note """
+An in-text reference pointer list item can contain only a single in-text reference pointer.
 
-Note that, as specified through the hasKey assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity."""@en ;
-    rdfs:comment "This class describes all the list items that must be used in the context of an in-text reference pointer list."@en ;
+Note that, as specified through the `hasKey` assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.
+"""@en ;
+    rdfs:comment "A list item that must be used in the context of an in-text reference pointer list."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom :InTextReferencePointer ;
+            owl:allValuesFrom c4o:InTextReferencePointer  ;
             owl:onProperty co:itemContent ],
-        co:ListItem .
+        co:ListItem ;
+    vann:example """
+    :my-in-text-ref-pointer-list-item
+        co:itemContent :my-in-text-ref-pointer .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
-:SingleReferencePointerList a owl:Class ;
+c4o:SingleReferencePointerList  a owl:Class ;
     rdfs:label "single reference pointer list"@en ;
-    dc:description """A single reference pointer list pertains only to one bibliographic reference, being a list of all the in-text reference pointers to that single reference to be found in the citing work.
+    skos:note """
+A single reference pointer list pertains only to one bibliographic reference, being a list of all the in-text reference pointers to that single reference to be found in the citing work.
 
-Note that this semantic constraint is handled by the combined use of a particular restriction of this class, i.e. that the list pertains to exactly one owl:Thing, and that the following SWRL rule applies:
+Note that this semantic constraint is handled by the combined use of a particular restriction of this class, i.e. that the list pertains to exactly one `owl:Thing`, and that the following SWRL rule applies:
 
-c4o:InTextReferencePointerList(?l), c4o:denotes(?p, ?r), swan:item(?l, ?i), swan:itemContent(?i, ?p) -> c4o:pertainsTo(?l, ?r)"""@en ;
+    c4o:InTextReferencePointerList(?l), 
+    c4o:denotes (?p, ?r), 
+    swan:item(?l, ?i), 
+    swan:itemContent(?i, ?p) -> 
+    c4o:pertainsTo (?l, ?r)
+"""@en ;
     rdfs:comment "An in-text reference pointer list that pertains to exactly one bibliographic reference."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :pertainsTo ],
-        :InTextReferencePointerList .
+            owl:onProperty c4o:pertainsTo  ],
+        c4o:InTextReferencePointerList ;
+    vann:example """
+    :my-single-ref-pointer-list-item
+        c4o:pertainsTo :my-bibliographic-reference .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
-:hasContent a owl:DatatypeProperty ;
+c4o:hasContent a owl:DatatypeProperty ;
     rdfs:label "has content"@en ;
-    rdfs:comment "It is used to specify the textual content of a particular FRBR expression."@en ;
+    rdfs:comment "The textual content of a particular FRBR expression."@en ;
     rdfs:domain frbr:Expression ;
     rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf owl:topDataProperty .
+    rdfs:subPropertyOf owl:topDataProperty ;
+    vann:example """
+    :my-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Markup semantics are modeled computationally by applying
+            knowledge representation technologies to the problem of making
+            those structures, relationships, and properties explicit.' .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
-:isDenotedBy a owl:ObjectProperty ;
+c4o:isDenotedBy a owl:ObjectProperty ;
     rdfs:label "is denoted by"@en ;
     rdfs:comment "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."@en ;
     rdfs:domain biro:BibliographicReference ;
-    rdfs:range :InTextReferencePointer ;
-    rdfs:subPropertyOf owl:topObjectProperty .
+    rdfs:range c4o:InTextReferencePointer  ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vann:example """
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.' ;
+        c4o:isDenotedBy :my-in-text-reference-pointer ;
+        biro:references :my-article .
 
-frbr:Endeavour a owl:Class .
+    :my-in-text-reference-pointer a c4o:InTextReferencePointer .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+frbr:Endeavour a owl:Class ;
+    rdfs:label "endeavour"@en ;
+    rdfs:comment "The different aspects of user interests in the products of intellectual or artistic artifact."@en ;
+    rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> .
 
 xsd:date a rdfs:Datatype .
 
 owl:topDataProperty a owl:DatatypeProperty .
 
-:denotes a owl:ObjectProperty ;
+c4o:denotes  a owl:ObjectProperty ;
     rdfs:label "denotes"@en ;
-    rdfs:comment "A property used to assert the connection between an in-text reference pointer and the bibliographic reference it points to."@en ;
-    rdfs:domain :InTextReferencePointer ;
+    rdfs:comment "The relation between an in-text reference pointer and the bibliographic reference it points to."@en ;
+    rdfs:domain c4o:InTextReferencePointer  ;
     rdfs:range biro:BibliographicReference ;
     rdfs:subPropertyOf owl:topObjectProperty ;
-    owl:inverseOf :isDenotedBy .
+    owl:inverseOf c4o:isDenotedBy ;
+    vann:example """
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.' ;
+        biro:references :my-article .
 
-:hasContext a owl:ObjectProperty ;
+    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;
+        c4o:denotes :my-bibliographic-reference .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+c4o:hasContext a owl:ObjectProperty ;
     rdfs:label "has context"@en ;
-    dc:description "Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property c4o:hasContent."@en ;
-    rdfs:comment "This property is used to indicate the textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, this context providing the rhetorical motivation for the existence of that citation."@en ;
-    rdfs:domain :InTextReferencePointer ;
+    skos:note "Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`."@en ;
+    rdfs:comment "The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation."@en ;
+    rdfs:domain c4o:InTextReferencePointer  ;
     rdfs:range [ a owl:Class ;
             owl:intersectionOf ( frbr:Expression [ a owl:Restriction ;
                         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onProperty :hasContent ] ) ] ;
-    rdfs:subPropertyOf owl:topObjectProperty .
+                        owl:onProperty c4o:hasContent ] ) ] ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vann:example """
+    :my-article
+        frbr:part :in-text-reference-pointer , :my-bibliographic-reference .
+
+    :in-text-reference-pointer a c4o:InTextReferencePointer  ;
+        c4o:denotes :my-bibliographic-reference ;
+        c4o:hasContext  :my-citation-sentence .
+
+    :my-citation-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)
+            proposed a formal semantic approach for structured documents.' .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
 <urn:swrl#p> a swrl:Variable .
 
 <urn:swrl#r> a swrl:Variable .
 
-:SingleLocationPointerList a owl:Class ;
+c4o:SingleLocationPointerList a owl:Class ;
     rdfs:label "single location pointer list"@en ;
-    dc:description "A single location pointer list pertains to two or more references occurring at a single location in the text of the citing work - e.g. \"[3,4,9]\" or \"[7-12]\"."@en ;
+    skos:note "A single location pointer list pertains to two or more references occurring at a single location in the text of the citing work - e.g. '[3,4,9]' or '[7-12]'."@en ;
     rdfs:comment "An in-text reference pointer list that pertains to all the in-text reference pointers to two or more references occurring at a single location in the text of the citing work."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :hasContext ],
+            owl:onProperty c4o:hasContext  ],
         [ a owl:Restriction ;
             owl:minCardinality "2"^^xsd:nonNegativeInteger ;
-            owl:onProperty :pertainsTo ],
-        :InTextReferencePointerList,
+            owl:onProperty c4o:pertainsTo  ],
+        c4o:InTextReferencePointerList,
         frbr:Expression ;
-    owl:disjointWith :SingleReferencePointerList .
+    owl:disjointWith c4o:SingleReferencePointerList ;
+    vann:example """
+    :my-single-loc-pointer-list
+        c4o:pertainsTo :my-bibliographic-reference, :my-other-bibliographic-reference ;
+        c4o:hasContext :my-sentence .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
 <urn:swrl#l> a swrl:Variable .
 
-:InTextReferencePointerList a owl:Class ;
+c4o:InTextReferencePointerList a owl:Class ;
     rdfs:label "in-text reference pointer list"@en ;
-    dc:description "An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references."@en ;
+    skos:note "An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references."@en ;
     rdfs:comment "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty :pertainsTo ;
+            owl:onProperty c4o:pertainsTo  ;
             owl:someValuesFrom biro:BibliographicReference ],
         [ a owl:Restriction ;
-            owl:allValuesFrom :InTextReferencePointerListItem ;
+            owl:allValuesFrom c4o:InTextReferencePointerListItem ;
             owl:onProperty co:item ],
-        co:List .
+        co:List ;
+    vann:example """
+    :my-in-text-ref-pointer-list
+        c4o:pertainsTo :my-bibliographic-reference ;
+        co:item :my-in-text-ref-pointer-list-item .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
-:pertainsTo a owl:ObjectProperty ;
+c4o:pertainsTo a owl:ObjectProperty ;
     rdfs:label "pertains to"@en ;
-    rdfs:comment "The property linking an in-text reference pointer list to the bibliographic reference or references denoted by the in-text reference pointers within that list."@en ;
-    rdfs:domain :InTextReferencePointerList ;
+    rdfs:comment "The relation between an in-text reference pointer list and the bibliographic reference or references denoted by the in-text reference pointers within that list."@en ;
+    rdfs:domain c4o:InTextReferencePointerList ;
     rdfs:range biro:BibliographicReference ;
-    rdfs:subPropertyOf owl:topObjectProperty .
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vann:example """
+    :my-in-text-ref-pointer-list
+        c4o:pertainsTo :my-bibliographic-reference .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
-:GlobalCitationCount a owl:Class ;
+c4o:GlobalCitationCount a owl:Class ;
     rdfs:label "global citation count"@en ;
     rdfs:comment "The number of times a work has been cited globally, as determined from a particular bibliographic information source on a particular date."@en ;
-    owl:disjointWith :InTextReferencePointer,
-        :SingleLocationPointerList .
+    owl:disjointWith c4o:InTextReferencePointer ,
+        c4o:SingleLocationPointerList ;
+    vann:example """
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
 
-biro:BibliographicReference a owl:Class .
+biro:BibliographicReference a owl:Class ;
+    rdfs:label "bibliographic reference"@en ;
+    rdfs:comment "An expression of a bibliographic record in a specific format, that references a particular textual or data publication (or a work in preparation for publication). Each bibliographic reference is a list of items containing entities that describe aspects of the referenced work - for example authors, title, journal, publication year - selected from the bibliographic record."@en ;
+    rdfs:isDefinedBy <http://purl.org/spar/biro/> .
 
-:InTextReferencePointer a owl:Class ;
+c4o:InTextReferencePointer  a owl:Class ;
     rdfs:label "in-text reference pointer"@en ;
-    dc:description <http://purl.org/spar/c4o/InTextReferencePointer%20module.png>,
-        "An in-text reference pointer is a textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence."@en ;
-    rdfs:comment """The in-text reference pointer is a textual element, usually embedded at the end of a phrase or sentence within the text of a document, that denotes a specific bibliographic reference present in the reference list of that document. For example, if the item in the reference list is: 
+    rdfs:comment "A textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence."@en ;
+    skos:note """
+The in-text reference pointer is a textual element, usually embedded at the end of a phrase or sentence within the text of a document, that denotes a specific bibliographic reference present in the reference list of that document. 
+For example, if the item in the reference list is: 
 
-4.  Ko AI, Reis MG, Ribeiro Dourado CM, Johnson WD Jr, Riley LW (1999). Urban epidemic of severe leptospirosis in Brazil. Salvador Leptospirosis Study Group. Lancet 354: 820-825.
+    4.  Ko AI, Reis MG, Ribeiro Dourado CM, Johnson WD Jr, Riley LW (1999). Urban epidemic of severe leptospirosis in Brazil. Salvador Leptospirosis Study Group. Lancet 354: 820-825.
 
-the in-text reference pointer to this paper in a journal article may be manifested in a number of ways:	
+The in-text reference pointer to this paper in a journal article may be manifested in a number of ways:	
 
-Numerically, for example by using the numeral 4 in superscript or between square brackets, thus: "[4]".
+* Numerically, for example by using the numeral 4 in superscript or between square brackets, thus: '[4]'.
+* Or by use of the author names (or the first author's name plus et al.) and the publication year in parentheses, thus: '(Ko et al., 1999)'. 
+* Or, less commonly, by the use of a code, e.g. by specifying the first surname letter of the first three author of the cited work followed by the last two digits of the year of publication, this string of characters being enclosed within square brackets, thus: '[KRR99]'.
 
-Or by use of the author names (or the first author's name plus et al.) and the publication year in parentheses, thus: "(Ko et al., 1999)". 
-
-Or, less commonly, by the use of a code, e.g. by specifying the first surname letter of the first three author of the cited work followed by the last two digits of the year of publication, this string of characters being enclosed within square brackets, thus: "[KRR99]".
-
-If reference pointers are aggregated, e.g. "[4, 5, 6-9]", they may be described by means of the class c4o:SingleLocationPointerList."""@en ;
+If reference pointers are aggregated, e.g. '[4, 5, 6-9]', they may be described by means of the class `c4o:SingleLocationPointerList`.
+"""@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biro:BibliographicReference ;
-            owl:onProperty :denotes ;
+            owl:onProperty c4o:denotes  ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :hasContext ],
+            owl:onProperty c4o:hasContext  ],
         frbr:Expression ;
-    owl:disjointWith :SingleLocationPointerList .
+    owl:disjointWith c4o:SingleLocationPointerList ;
+    vann:example """
+    :my-article
+        frbr:part :my-in-text-ref-pointer , :my-bibliographic-reference .
 
-frbr:Expression a owl:Class .
+    :my-in-text-ref-pointer a c4o:InTextReferencePointer  ;
+        c4o:denotes :my-bibliographic-reference ;
+        c4o:hasContext :my-citation-sentence .
+    """ ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o/> ;
+    vs:term_status reg:statusStable .
+
+frbr:Expression a owl:Class ;
+    rdfs:label "expression"@en ;
+    rdfs:comment """
+The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.
+
+An expression is the specific intellectual or artistic form that a work takes each time it is 'realized'. 
+Expression encompasses, for example, the specific words, sentences, paragraphs, etc. that result from the realization of a work in the form of a text, or the particular sounds, phrasing, etc. resulting from the realization of a musical work.
+        """@en ;
+    rdfs:isDefinedBy <http://purl.org/vocab/frbr/core#> .
 
 owl:topObjectProperty a owl:ObjectProperty .
+
+co:item a owl:ObjectProperty ;
+    rdfs:label "has item"@en ;
+    rdfs:comment "The link to every item of a bag."@en ;
+    rdfs:isDefinedBy <http://purl.org/co/> .
+
+co:itemContent a owl:ObjectProperty ;
+    rdfs:label "has item content"@en ;
+    rdfs:comment "The link to the actual resource to which the item refers."@en ;
+    rdfs:isDefinedBy <http://purl.org/co/> .
+
+co:element a owl:ObjectProperty ;
+    rdfs:label "has element"@en ;
+    rdfs:comment "The link to the members of a collection."@en ;
+    rdfs:isDefinedBy <http://purl.org/co/> .
+
+co:ListItem a owl:Class ;
+    rdfs:label "list item"@en ;
+    rdfs:comment "An element belonging to a list."@en ;
+    rdfs:isDefinedBy <http://purl.org/co/> .
+
+co:List a owl:Class ;
+    rdfs:label "list"@en ;
+    rdfs:comment "An ordered array of items, that can be present in multiple copies."@en ;
+    rdfs:isDefinedBy <http://purl.org/co/> .
+
+
 
 [] a swrl:Imp ;
     swrl:body [ a swrl:AtomList ;
             rdf:first [ a swrl:ClassAtom ;
                     swrl:argument1 <urn:swrl#l> ;
-                    swrl:classPredicate :InTextReferencePointerList ] ;
+                    swrl:classPredicate c4o:InTextReferencePointerList ] ;
             rdf:rest [ a swrl:AtomList ;
                     rdf:first [ a swrl:IndividualPropertyAtom ;
                             swrl:argument1 <urn:swrl#l> ;
@@ -270,12 +681,12 @@ owl:topObjectProperty a owl:ObjectProperty .
                             rdf:first [ a swrl:IndividualPropertyAtom ;
                                     swrl:argument1 <urn:swrl#p> ;
                                     swrl:argument2 <urn:swrl#r> ;
-                                    swrl:propertyPredicate :denotes ] ;
+                                    swrl:propertyPredicate c4o:denotes  ] ;
                             rdf:rest () ] ] ] ;
     swrl:head [ a swrl:AtomList ;
             rdf:first [ a swrl:IndividualPropertyAtom ;
                     swrl:argument1 <urn:swrl#l> ;
                     swrl:argument2 <urn:swrl#r> ;
-                    swrl:propertyPredicate :pertainsTo ] ;
+                    swrl:propertyPredicate c4o:pertainsTo  ] ;
             rdf:rest () ] .
 
