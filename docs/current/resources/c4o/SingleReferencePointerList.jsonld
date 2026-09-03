@@ -1,0 +1,66 @@
+[
+  {
+    "@id": "http://purl.org/spar/c4o/SingleReferencePointerList",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-single-ref-pointer-list-item\n        c4o:pertainsTo :my-bibliographic-reference .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An in-text reference pointer list that pertains to exactly one bibliographic reference."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "single reference pointer list"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b2"
+      },
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2008/05/skos#note": [
+      {
+        "@language": "en",
+        "@value": "\nA single reference pointer list pertains only to one bibliographic reference, being a list of all the in-text reference pointers to that single reference to be found in the citing work.\n\nNote that this semantic constraint is handled by the combined use of a particular restriction of this class, i.e. that the list pertains to exactly one `owl:Thing`, and that the following SWRL rule applies:\n\n    c4o:InTextReferencePointerList(?l), \n    c4o:denotes (?p, ?r), \n    swan:item(?l, ?i), \n    swan:itemContent(?i, ?p) -> \n    c4o:pertainsTo (?l, ?r)\n"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/spar/c4o/pertainsTo"
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:hasGlobalCountSource a owl:ObjectProperty ;
+    rdfs:label "has global count source"@en ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
+
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;
+        c4o:hasGlobalCountSource :my-bibliographic-info-source .
+
+    :my-bibliographic-info-source a c4o:BibliographicInformationSource  ;
+        foaf:homepage <http://scholar.google.com> .
+    """ ;
+    rdfs:comment "The relation between a global citation count and the bibliographic information source providing the global citation count information for a particular publication on a particular date."@en ;
+    rdfs:domain c4o:GlobalCitationCount ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range c4o:BibliographicInformationSource ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vs:term_status reg:statusStable .
+

@@ -1,0 +1,9 @@
+@prefix co: <http://purl.org/co/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+co:ListItem a owl:Class ;
+    rdfs:label "list item"@en ;
+    rdfs:comment "An element belonging to a list."@en ;
+    rdfs:isDefinedBy co: .
+

@@ -1,0 +1,65 @@
+[
+  {
+    "@id": "http://purl.org/spar/c4o/InTextReferencePointerListItem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-in-text-ref-pointer-list-item\n        co:itemContent :my-in-text-ref-pointer .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A list item that must be used in the context of an in-text reference pointer list."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "in-text reference pointer list item"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/co/ListItem"
+      },
+      {
+        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b1"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ],
+    "http://www.w3.org/2008/05/skos#note": [
+      {
+        "@language": "en",
+        "@value": "\nAn in-text reference pointer list item can contain only a single in-text reference pointer.\n\nNote that, as specified through the `hasKey` assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.\n"
+      }
+    ]
+  },
+  {
+    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/co/itemContent"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nbe907eaac5a34be089dc81e641c920f8b7 .
+_:nbe907eaac5a34be089dc81e641c920f8b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:nbe907eaac5a34be089dc81e641c920f8b7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/c4o/hasContext> .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2000/01/rdf-schema#label> "single location pointer list"@en .
+_:nbe907eaac5a34be089dc81e641c920f8b8 <http://www.w3.org/2002/07/owl#minCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:nbe907eaac5a34be089dc81e641c920f8b7 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2008/05/skos#note> "A single location pointer list pertains to two or more references occurring at a single location in the text of the citing work - e.g. '[3,4,9]' or '[7-12]'."@en .
+_:nbe907eaac5a34be089dc81e641c920f8b8 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/c4o/pertainsTo> .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://purl.org/vocab/vann/example> "\n    :my-single-loc-pointer-list\n        c4o:pertainsTo :my-bibliographic-reference, :my-other-bibliographic-reference ;\n        c4o:hasContext :my-sentence .\n    " .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2000/01/rdf-schema#comment> "An in-text reference pointer list that pertains to all the in-text reference pointers to two or more references occurring at a single location in the text of the citing work."@en .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nbe907eaac5a34be089dc81e641c920f8b8 .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/c4o/> .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/c4o/InTextReferencePointerList> .
+_:nbe907eaac5a34be089dc81e641c920f8b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/vocab/frbr/core#Expression> .
+<http://purl.org/spar/c4o/SingleLocationPointerList> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spar/c4o/SingleReferencePointerList> .

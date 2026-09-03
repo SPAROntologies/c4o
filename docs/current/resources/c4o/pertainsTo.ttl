@@ -1,0 +1,21 @@
+@prefix biro: <http://purl.org/spar/biro/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:pertainsTo a owl:ObjectProperty ;
+    rdfs:label "pertains to"@en ;
+    vann:example """
+    :my-in-text-ref-pointer-list
+        c4o:pertainsTo :my-bibliographic-reference .
+    """ ;
+    rdfs:comment "The relation between an in-text reference pointer list and the bibliographic reference or references denoted by the in-text reference pointers within that list."@en ;
+    rdfs:domain c4o:InTextReferencePointerList ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range biro:BibliographicReference ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vs:term_status reg:statusStable .
+

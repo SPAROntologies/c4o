@@ -1,0 +1,9 @@
+@prefix co: <http://purl.org/co/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+co:item a owl:ObjectProperty ;
+    rdfs:label "has item"@en ;
+    rdfs:comment "The link to every item of a bag."@en ;
+    rdfs:isDefinedBy co: .
+

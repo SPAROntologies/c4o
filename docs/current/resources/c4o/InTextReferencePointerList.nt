@@ -1,0 +1,16 @@
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2008/05/skos#note> "An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references."@en .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:nbe907eaac5a34be089dc81e641c920f8b9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/c4o/pertainsTo> .
+_:nbe907eaac5a34be089dc81e641c920f8b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nbe907eaac5a34be089dc81e641c920f8b10 .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nbe907eaac5a34be089dc81e641c920f8b9 .
+_:nbe907eaac5a34be089dc81e641c920f8b10 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/co/item> .
+_:nbe907eaac5a34be089dc81e641c920f8b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:nbe907eaac5a34be089dc81e641c920f8b10 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/spar/c4o/InTextReferencePointerListItem> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://purl.org/vocab/vann/example> "\n    :my-in-text-ref-pointer-list\n        c4o:pertainsTo :my-bibliographic-reference ;\n        co:item :my-in-text-ref-pointer-list-item .\n    " .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#comment> "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."@en .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/co/List> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/c4o/> .
+_:nbe907eaac5a34be089dc81e641c920f8b9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spar/biro/BibliographicReference> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#label> "in-text reference pointer list"@en .

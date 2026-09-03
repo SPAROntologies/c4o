@@ -1,0 +1,31 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos1: <http://www.w3.org/2008/05/skos#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c4o:SingleLocationPointerList a owl:Class ;
+    rdfs:label "single location pointer list"@en ;
+    vann:example """
+    :my-single-loc-pointer-list
+        c4o:pertainsTo :my-bibliographic-reference, :my-other-bibliographic-reference ;
+        c4o:hasContext :my-sentence .
+    """ ;
+    rdfs:comment "An in-text reference pointer list that pertains to all the in-text reference pointers to two or more references occurring at a single location in the text of the citing work."@en ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty c4o:hasContext ],
+        [ a owl:Restriction ;
+            owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onProperty c4o:pertainsTo ],
+        c4o:InTextReferencePointerList,
+        frbr:Expression ;
+    owl:disjointWith c4o:SingleReferencePointerList ;
+    vs:term_status reg:statusStable ;
+    skos1:note "A single location pointer list pertains to two or more references occurring at a single location in the text of the citing work - e.g. '[3,4,9]' or '[7-12]'."@en .
+

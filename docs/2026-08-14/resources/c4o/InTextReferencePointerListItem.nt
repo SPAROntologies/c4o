@@ -1,0 +1,12 @@
+_:nbe907eaac5a34be089dc81e641c920f8b1 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/spar/c4o/InTextReferencePointer> .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/co/ListItem> .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://purl.org/vocab/vann/example> "\n    :my-in-text-ref-pointer-list-item\n        co:itemContent :my-in-text-ref-pointer .\n    " .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://www.w3.org/2008/05/skos#note> "\nAn in-text reference pointer list item can contain only a single in-text reference pointer.\n\nNote that, as specified through the `hasKey` assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.\n"@en .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://www.w3.org/2000/01/rdf-schema#label> "in-text reference pointer list item"@en .
+_:nbe907eaac5a34be089dc81e641c920f8b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/c4o/> .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://www.w3.org/2000/01/rdf-schema#comment> "A list item that must be used in the context of an in-text reference pointer list."@en .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:nbe907eaac5a34be089dc81e641c920f8b1 .
+<http://purl.org/spar/c4o/InTextReferencePointerListItem> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
+_:nbe907eaac5a34be089dc81e641c920f8b1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/co/itemContent> .
