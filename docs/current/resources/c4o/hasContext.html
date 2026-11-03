@@ -240,22 +240,22 @@ What information sources are used to track global citation counts, along with th
         rdfs:comment "The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation."@en ;
         rdfs:domain c4o:InTextReferencePointer ;
         rdfs:isDefinedBy c4o: ;
-        rdfs:range _:n374d0038fcb84382b692f44171d0ca6cb3 ;
+        rdfs:range _:n0a9201867f0f47c8b0fd93a248c8acbcb3 ;
         rdfs:subPropertyOf owl:topObjectProperty ;
         vs:term_status reg:statusStable ;
         skos1:note "Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`."@en .
 
-    _:n374d0038fcb84382b692f44171d0ca6cb3 a owl:Class ;
-        owl:intersectionOf _:n374d0038fcb84382b692f44171d0ca6cb5 .
+    _:n0a9201867f0f47c8b0fd93a248c8acbcb3 a owl:Class ;
+        owl:intersectionOf _:n0a9201867f0f47c8b0fd93a248c8acbcb5 .
 
-    _:n374d0038fcb84382b692f44171d0ca6cb4 a owl:Restriction ;
+    _:n0a9201867f0f47c8b0fd93a248c8acbcb4 a owl:Restriction ;
         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onProperty c4o:hasContent .
 
-    _:n374d0038fcb84382b692f44171d0ca6cb5 rdf:first frbr:Expression ;
-        rdf:rest _:n374d0038fcb84382b692f44171d0ca6cb6 .
+    _:n0a9201867f0f47c8b0fd93a248c8acbcb5 rdf:first frbr:Expression ;
+        rdf:rest _:n0a9201867f0f47c8b0fd93a248c8acbcb6 .
 
-    _:n374d0038fcb84382b692f44171d0ca6cb6 rdf:first _:n374d0038fcb84382b692f44171d0ca6cb4 ;
+    _:n0a9201867f0f47c8b0fd93a248c8acbcb6 rdf:first _:n0a9201867f0f47c8b0fd93a248c8acbcb4 ;
         rdf:rest () .
 }
 
@@ -296,7 +296,7 @@ What information sources are used to track global citation counts, along with th
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
-            "@id": "_:n374d0038fcb84382b692f44171d0ca6cb3"
+            "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb3"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -317,7 +317,7 @@ What information sources are used to track global citation counts, along with th
         ]
       },
       {
-        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb3",
+        "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb3",
         "@type": [
           "http://www.w3.org/2002/07/owl#Class"
         ],
@@ -328,14 +328,14 @@ What information sources are used to track global citation counts, along with th
                 "@id": "http://purl.org/vocab/frbr/core#Expression"
               },
               {
-                "@id": "_:n374d0038fcb84382b692f44171d0ca6cb4"
+                "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb4"
               }
             ]
           }
         ]
       },
       {
-        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb4",
+        "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb4",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -354,25 +354,25 @@ What information sources are used to track global citation counts, along with th
     ],
     "@id": "http://purl.org/spar/c4o"
   }
-]</code></pre></div><div class="tab-pane fade" id=id_bc8d32d231350ada349bb1d0a73abde9_Relation_prov_3 role=tabpanel><pre class="mb-0 small"><code>_:n374d0038fcb84382b692f44171d0ca6cb4 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/c4o/hasContent> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#label> "has context"@en &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n374d0038fcb84382b692f44171d0ca6cb4 &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n374d0038fcb84382b692f44171d0ca6cb6 &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb4 &lt;http://www.w3.org/2002/07/owl#maxCardinality> "1"^^&lt;http://www.w3.org/2001/XMLSchema#nonNegativeInteger> &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb3 &lt;http://www.w3.org/2002/07/owl#intersectionOf> _:n374d0038fcb84382b692f44171d0ca6cb5 &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#ObjectProperty> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#subPropertyOf> &lt;http://www.w3.org/2002/07/owl#topObjectProperty> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/c4o/> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2008/05/skos#note> "Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`."@en &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#domain> &lt;http://purl.org/spar/c4o/InTextReferencePointer> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://purl.org/vocab/vann/example> "\n    :my-article\n        frbr:part :in-text-reference-pointer , :my-bibliographic-reference .\n\n    :in-text-reference-pointer a c4o:InTextReferencePointer  ;\n        c4o:denotes :my-bibliographic-reference ;\n        c4o:hasContext  :my-citation-sentence .\n\n    :my-citation-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)\n            proposed a formal semantic approach for structured documents.' .\n    " &lt;http://purl.org/spar/c4o> .
+]</code></pre></div><div class="tab-pane fade" id=id_bc8d32d231350ada349bb1d0a73abde9_Relation_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#subPropertyOf> &lt;http://www.w3.org/2002/07/owl#topObjectProperty> &lt;http://purl.org/spar/c4o> .
 &lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation."@en &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#range> _:n374d0038fcb84382b692f44171d0ca6cb3 &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> &lt;http://purl.org/vocab/frbr/core#Expression> &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#ObjectProperty> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#range> _:n0a9201867f0f47c8b0fd93a248c8acbcb3 &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#label> "has context"@en &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb4 &lt;http://www.w3.org/2002/07/owl#maxCardinality> "1"^^&lt;http://www.w3.org/2001/XMLSchema#nonNegativeInteger> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasContext> &lt;http://purl.org/vocab/vann/example> "\n    :my-article\n        frbr:part :in-text-reference-pointer , :my-bibliographic-reference .\n\n    :in-text-reference-pointer a c4o:InTextReferencePointer  ;\n        c4o:denotes :my-bibliographic-reference ;\n        c4o:hasContext  :my-citation-sentence .\n\n    :my-citation-sentence a doco:Sentence ;\n        c4o:hasContent\n            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)\n            proposed a formal semantic approach for structured documents.' .\n    " &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#domain> &lt;http://purl.org/spar/c4o/InTextReferencePointer> &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb3 &lt;http://www.w3.org/2002/07/owl#intersectionOf> _:n0a9201867f0f47c8b0fd93a248c8acbcb5 &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2008/05/skos#note> "Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`."@en &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/c4o/> &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n0a9201867f0f47c8b0fd93a248c8acbcb6 &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n0a9201867f0f47c8b0fd93a248c8acbcb4 &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first> &lt;http://purl.org/vocab/frbr/core#Expression> &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb4 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/c4o/hasContent> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasContext> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/c4o> .
 
 </code></pre></div></div></div></div></div></div></div></div></div></div><div><a class="btn btn-outline-secondary" href=../../c4o.html>← Back to full documentation</a></div><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdn.jsdelivr.net/npm/marked/marked.min.js></script><script src=https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js></script><script>document.addEventListener("DOMContentLoaded", function() {
 

@@ -7,13 +7,9 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
   <rdf:Description rdf:about="http://purl.org/spar/c4o/BibliographicInformationSource">
+    <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/GlobalCitationCount"/>
     <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/SingleLocationPointerList"/>
     <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
-    <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/GlobalCitationCount"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:label xml:lang="en">bibliographic information source</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <vann:example>
     :my-article
         c4o:hasGlobalCitationFrequency :my-global-citation-count .
@@ -25,6 +21,10 @@
     :my-bibliographic-info-source a c4o:BibliographicInformationSource  ;
         foaf:homepage &lt;http://scholar.google.com&gt; .
     </vann:example>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <rdfs:label xml:lang="en">bibliographic information source</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
     <rdfs:comment xml:lang="en">A source of information about bibliographic citations, such as Google Scholar, Web of Science or Scopus.</rdfs:comment>
   </rdf:Description>
 </rdf:RDF>

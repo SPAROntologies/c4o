@@ -7,12 +7,14 @@
    xmlns:vann="http://purl.org/vocab/vann/"
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
+  <rdf:Description rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb11">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/denotes"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/c4o/InTextReferencePointer">
-    <rdfs:subClassOf rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb11"/>
-    <rdfs:subClassOf rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb12"/>
-    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
     <rdfs:label xml:lang="en">in-text reference pointer</rdfs:label>
-    <rdfs:comment xml:lang="en">A textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence.</rdfs:comment>
     <skos1:note xml:lang="en">
 The in-text reference pointer is a textual element, usually embedded at the end of a phrase or sentence within the text of a document, that denotes a specific bibliographic reference present in the reference list of that document. 
 For example, if the item in the reference list is: 
@@ -27,6 +29,12 @@ The in-text reference pointer to this paper in a journal article may be manifest
 
 If reference pointers are aggregated, e.g. '[4, 5, 6-9]', they may be described by means of the class `c4o:SingleLocationPointerList`.
 </skos1:note>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+    <rdfs:subClassOf rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb11"/>
+    <rdfs:subClassOf rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb12"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
+    <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/SingleLocationPointerList"/>
     <vann:example>
     :my-article
         frbr:part :my-in-text-ref-pointer , :my-bibliographic-reference .
@@ -35,20 +43,12 @@ If reference pointers are aggregated, e.g. '[4, 5, 6-9]', they may be described 
         c4o:denotes :my-bibliographic-reference ;
         c4o:hasContext :my-citation-sentence .
     </vann:example>
-    <owl:disjointWith rdf:resource="http://purl.org/spar/c4o/SingleLocationPointerList"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
+    <rdfs:comment xml:lang="en">A textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence.</rdfs:comment>
     <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb12">
+  <rdf:Description rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:onProperty rdf:resource="http://purl.org/spar/c4o/hasContext"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/denotes"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    <owl:onClass rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
   </rdf:Description>
 </rdf:RDF>
