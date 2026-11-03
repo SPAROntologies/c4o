@@ -1,0 +1,9 @@
+@prefix co: <http://purl.org/co/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+co:itemContent a owl:ObjectProperty ;
+    rdfs:label "has item content"@en ;
+    rdfs:comment "The link to the actual resource to which the item refers."@en ;
+    rdfs:isDefinedBy co: .
+

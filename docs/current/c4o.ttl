@@ -32,7 +32,7 @@ dc:title a owl:AnnotationProperty .
     dc:collaborator "Sebastian Barzaghi (https://orcid.org/0000-0002-0799-1527)"^^xsd:string ;
     dc:creator "David Shotton (https://orcid.org/0000-0001-5506-523X)"^^xsd:string,
         "Silvio Peroni (https://orcid.org/0000-0003-0530-4305)"^^xsd:string ;
-    dc:date "2026-08-14" ;
+    dc:date "2026-10-05" ;
     dc:description """
 The **_Citation Counting and Context Characterization Ontology (C4O)_** allows the characterization of bibliographic citations in terms of their number and their context.
 
@@ -80,7 +80,7 @@ In a particular sentence of the paper entitled 'Intertextual semantics: A semant
 
 C4O enables ontological descriptions of the citation context where an in-text reference pointer appears in the citing document, and allows one to relate that context to relevant textual passages in the cited document.
 
-    <http://dx.doi.org/10.1002/asi.21134>
+    <http://doi.org/10.1002/asi.21134>
         frbr:part :in-text-renear02 , :renear02 .
 
     :in-text-renear02 a c4o:InTextReferencePointer  ;
@@ -93,14 +93,14 @@ C4O enables ontological descriptions of the citation context where an in-text re
             Towards a semantics for XML markup. In E. Mudson (Chair),
             Proceedings of the ACM Symposium on Document Engineering,
             (pp. 119-126). New York: ACM Press.' ;
-        biro:references <http://dx.doi.org/10.1145/585058.585081> .
+        biro:references <http://doi.org/10.1145/585058.585081> .
 
     :citation-sentence a doco:Sentence ;
         c4o:hasContent
             'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)
             proposed a formal semantic approach for structured documents.' .
 
-    <http://dx.doi.org/10.1145/585058.585081>
+    <http://doi.org/10.1145/585058.585081>
         frbr:part :cited-sentence .
 
     :cited-sentence a doco:Sentence ;
@@ -116,7 +116,7 @@ C4O allows one to record the number of citations a cited entity has received glo
 
 For instance we can write a set of assertions according to C4O that describe how many times the reference - contained in the paper 'Intertextual semantics: A semantics for information design' and referring to the paper 'Towards a semantics for XML markup' - is used within the citing article and how much the cited article is globally cited according to Google Scholar.
 
-    <http://dx.doi.org/10.1002/asi.21134>
+    <http://doi.org/10.1002/asi.21134>
         frbr:part :renear02 .
 
     :renear02 a biro:BibliographicReference ;
@@ -125,10 +125,10 @@ For instance we can write a set of assertions according to C4O that describe how
             Towards a semantics for XML markup. In E. Mudson (Chair),
             Proceedings of the ACM Symposium on Document Engineering,
             (pp. 119-126). New York: ACM Press.' ;
-        biro:references <http://dx.doi.org/10.1145/585058.585081> ;
+        biro:references <http://doi.org/10.1145/585058.585081> ;
         c4o:hasInTextCitationFrequency  "1"^^xsd:nonNegativeInteger .
 
-    <http://dx.doi.org/10.1145/585058.585081>
+    <http://doi.org/10.1145/585058.585081>
         c4o:hasGlobalCitationFrequency :g-citation-2014-03-17 .
 
     :g-citation-2014-03-17 a c4o:GlobalCitationCount ;
@@ -216,7 +216,7 @@ What information sources are used to track global citation counts, along with th
     dcterms:created "2013-05-11" ;
     dcterms:issued "2018-06-22" ;
     dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-08-14" ;
+    dcterms:modified "2026-10-05" ;
     dcterms:publisher <https://ror.org/00wb4mk85> ;
     dcterms:source <https://github.com/sparontologies/c4o/docs/cq.md> ;
     bibo:doi "https://doi.org/10.25504/FAIRsharing.beb855" ;
@@ -224,16 +224,21 @@ What information sources are used to track global citation counts, along with th
     vann:preferredNamespacePrefix "c4o"@en ;
     vann:preferredNamespaceUri "http://purl.org/spar/c4o"@en ;
     rdfs:seeAlso <http://www.sparontologies.net/ontologies/c4o> ;
-    owl:backwardCompatibleWith c4o:2018-06-22 ;
+    owl:backwardCompatibleWith c4o:2026-08-14 ;
     owl:imports <http://purl.org/spar/biro> ;
-    owl:priorVersion c4o:2018-06-22 ;
-    owl:versionIRI c4o:2026-08-14 ;
-    owl:versionInfo "1.3.1"@en ;
-    foaf:logo <https://github.com/SPAROntologies/c4o/blob/master/spar.png> ;
+    owl:priorVersion c4o:2026-08-14 ;
+    owl:versionIRI c4o:2026-10-05 ;
+    owl:versionInfo "1.3.2"@en ;
+    vann:changes <https://github.com/SPAROntologies/c4o/blob/master/CHANGELOG.md> ;
+    foaf:logo <https://github.com/SPAROntologies/sparontologies.github.io/blob/master/static/img/spar/spar-logo.png> ;
     schema:codeRepository <https://github.com/SPAROntologies/c4o> ;
     schema:image <https://github.com/SPAROntologies/c4o/blob/master/docs/current/c4o.png> ;
     schema:includedInDataCatalog <https://fairsharing.org/> ;
-    schema:keywords "bibliographic references"@en,
+    dc:language <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+    schema:keywords 
+        "SPAR Ontologies"@en ,
+        "Semantic Publishing and Referencing Ontologies"@en ,        
+        "bibliographic references"@en,
         "bibliometrics"@en,
         "scholarly publishing"@en,
         "scientometrics"@en,
@@ -654,7 +659,7 @@ If reference pointers are aggregated, e.g. '[4, 5, 6-9]', they may be described 
 frbr:Expression a owl:Class ;
     rdfs:label "expression"@en ;
     rdfs:comment """
-The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.
+The intellectual or artistic realization of a work in the form of alphanumeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.
 
 An expression is the specific intellectual or artistic form that a work takes each time it is 'realized'. 
 Expression encompasses, for example, the specific words, sentences, paragraphs, etc. that result from the realization of a work in the form of a text, or the particular sounds, phrasing, etc. resulting from the realization of a musical work.

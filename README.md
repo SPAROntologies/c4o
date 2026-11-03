@@ -1,6 +1,12 @@
 # Citation Counting and Context Characterisation Ontology (C4O)
 
-The Citation Counting and Context Characterisation Ontology (C4O) is an ontology that permits the number of in-text citations of a cited source to be recorded, together with their textual citation contexts, along with the number of citations a cited entity has received globally on a particular date.
+[![License](https://img.shields.io/github/license/SPAROntologies/c4o)](LICENSE.md)
+[![Release](https://img.shields.io/github/v/release/SPAROntologies/c4o)](https://github.com/SPAROntologies/c4o/releases/latest)
+[![Tests](https://img.shields.io/github/actions/workflow/status/SPAROntologies/c4o/validation.yml?label=tests)](https://github.com/SPAROntologies/c4o/actions/workflows/validation.yml)
+[![Documentation](https://img.shields.io/badge/docs-sparontologies.net-blue)](http://www.sparontologies.net/ontologies/c4o)
+[![IRI](https://img.shields.io/badge/IRI-purl.org%2Fspar%2Fc4o-blue)](http://purl.org/spar/c4o)
+
+The **_Citation Counting and Context Characterisation Ontology (C4O)_** is an ontology that permits the number of in-text citations of a cited source to be recorded, together with their textual citation contexts, along with the number of citations a cited entity has received globally on a particular date.
 
 **URL:** http://purl.org/spar/c4o
 

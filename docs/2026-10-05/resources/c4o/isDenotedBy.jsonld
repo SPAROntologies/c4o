@@ -1,0 +1,50 @@
+[
+  {
+    "@id": "http://purl.org/spar/c4o/isDenotedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@value": "\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        dcterms:bibliographicCitation\n            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).\n            Towards a semantics for XML markup. In E. Mudson (Chair),\n            Proceedings of the ACM Symposium on Document Engineering,\n            (pp. 119-126). New York: ACM Press.' ;\n        c4o:isDenotedBy :my-in-text-reference-pointer ;\n        biro:references :my-article .\n\n    :my-in-text-reference-pointer a c4o:InTextReferencePointer .\n    "
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.org/spar/c4o/"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is denoted by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@id": "http://purl.org/linked-data/registry#statusStable"
+      }
+    ]
+  }
+]

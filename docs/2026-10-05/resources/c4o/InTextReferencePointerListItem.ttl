@@ -1,0 +1,28 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix co: <http://purl.org/co/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos1: <http://www.w3.org/2008/05/skos#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:InTextReferencePointerListItem a owl:Class ;
+    rdfs:label "in-text reference pointer list item"@en ;
+    vann:example """
+    :my-in-text-ref-pointer-list-item
+        co:itemContent :my-in-text-ref-pointer .
+    """ ;
+    rdfs:comment "A list item that must be used in the context of an in-text reference pointer list."@en ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom c4o:InTextReferencePointer ;
+            owl:onProperty co:itemContent ],
+        co:ListItem ;
+    vs:term_status reg:statusStable ;
+    skos1:note """
+An in-text reference pointer list item can contain only a single in-text reference pointer.
+
+Note that, as specified through the `hasKey` assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.
+"""@en .
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos1="http://www.w3.org/2008/05/skos#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="http://purl.org/spar/c4o/InTextReferencePointerList">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/co/List"/>
+    <rdfs:subClassOf rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb10"/>
+    <rdfs:subClassOf rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb9"/>
+    <rdfs:label xml:lang="en">in-text reference pointer list</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
+    <skos1:note xml:lang="en">An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references.</skos1:note>
+    <vann:example>
+    :my-in-text-ref-pointer-list
+        c4o:pertainsTo :my-bibliographic-reference ;
+        co:item :my-in-text-ref-pointer-list-item .
+    </vann:example>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb9">
+    <owl:allValuesFrom rdf:resource="http://purl.org/spar/c4o/InTextReferencePointerListItem"/>
+    <owl:onProperty rdf:resource="http://purl.org/co/item"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb10">
+    <owl:someValuesFrom rdf:resource="http://purl.org/spar/biro/BibliographicReference"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/pertainsTo"/>
+  </rdf:Description>
+</rdf:RDF>
