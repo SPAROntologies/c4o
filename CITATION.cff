@@ -1,0 +1,63 @@
+cff-version: 1.2.0
+title: The Citation Counting and Context Characterisation Ontology (C4O)
+message: >-
+If you use this software, please cite it using the
+metadata from this file.
+type: software
+authors:
+- given-names: Silvio
+  family-names: Peroni
+  orcid: 'https://orcid.org/0000-0003-0530-4305'
+- given-names: David
+  family-names: Shotton
+  orcid: 'https://orcid.org/0000-0001-5506-523X'
+identifiers:
+- type: doi
+  value: 10.25504/FAIRsharing.beb855
+repository-code: 'https://github.com/SPAROntologies/c4o'
+url: 'http://www.sparontologies.net/ontologies/c4o'
+abstract: The Citation Counting and Context Characterisation Ontology (C4O) is an ontology that permits the number of in-text citations of a cited source to be recorded, together with their textual citation contexts, along with the number of citations a cited entity has received globally on a particular date. 
+keywords:
+- bibliographic references
+- bibliometrics
+- scholarly publishing
+- scientometrics
+- semantic publishing
+license: CC-BY-4.0
+version: 1.3.2
+date-released: '2026-10-05'
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Di Iorio"
+    given-names: "Angelo"
+    orcid: "https://orcid.org/0000-0002-6893-7452"
+  - family-names: "Peroni"
+    given-names: "Silvio"
+    orcid: "https://orcid.org/0000-0003-0530-4305"
+  - family-names: "Shotton"
+    given-names: "David"
+    orcid: "https://orcid.org/0000-0001-5506-523X"
+  - family-names: "Vitali"
+    given-names: "Fabio"
+    orcid: "https://orcid.org/0000-0002-7562-5203"
+  url: "http://ceur-ws.org/Vol-1155/paper-05.pdf"
+  collection-title: "Proceedings of 4th Workshop on Semantic Publishing (SePublica 2014)"
+  collection-type: "proceedings"
+  editors:
+  - family-names: "Garcia Castro"
+    given-names: "A."
+  - family-names: "Lange"
+    given-names: "C."
+  - family-names: "Lord"
+    given-names: "P."
+  - family-names: "Stevens"
+    given-names: "R."
+  volume: 1155
+  notes: "CEUR Workshop Proceedings"
+  title: "Describing bibliographic references in RDF"
+  year: 2014
+  publisher:
+    name: "CEUR-WS.org"
+    city: "Aachen"
+    country: "DE"

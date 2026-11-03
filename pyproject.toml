@@ -1,11 +1,7 @@
 [project]
 name = "c4o"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.3.2"
+description = "The Citation Counting and Context Characterisation Ontology (C4O) is an ontology that permits the number of in-text citations of a cited source to be recorded, together with their textual citation contexts, along with the number of citations a cited entity has received globally on a particular date."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "codespell>=2.4.3",
-    "rdflib>=7.6.0",
-    "requests>=2.34.2",
-]
+dependencies = []
