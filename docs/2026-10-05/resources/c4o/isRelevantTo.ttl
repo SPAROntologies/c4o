@@ -1,0 +1,31 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:isRelevantTo a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "is relevant to"@en ;
+    vann:example """
+    :my-cited-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Markup semantics are modeled computationally by applying
+            knowledge representation technologies to the problem of making
+            those structures, relationships, and properties explicit.' ;
+        c4o:isRelevantTo :my-citation-sentence .
+
+    :my-citation-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)
+            proposed a formal semantic approach for structured documents.' .
+    """ ;
+    rdfs:comment "A relationship between two FRBR expressions, according to which one is declared to be of rhetorical relevance to another, for instance the textual context of a particular in-text reference pointer in one document is relevant to a section of text within the published document that is referenced by the bibliographic reference denoted by the in-text reference pointer, and vice versa that the converse relevance also exists."@en ;
+    rdfs:domain frbr:Expression ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range frbr:Expression ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vs:term_status reg:statusStable .
+

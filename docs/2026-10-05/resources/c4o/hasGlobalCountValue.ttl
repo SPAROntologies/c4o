@@ -1,0 +1,23 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c4o:hasGlobalCountValue a owl:DatatypeProperty ;
+    rdfs:label "has global count value"@en ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
+
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:comment "An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date."@en ;
+    rdfs:domain c4o:GlobalCitationCount ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range xsd:nonNegativeInteger ;
+    vs:term_status reg:statusStable .
+

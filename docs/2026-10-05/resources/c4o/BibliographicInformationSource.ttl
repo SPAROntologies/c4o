@@ -1,0 +1,27 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:BibliographicInformationSource a owl:Class ;
+    rdfs:label "bibliographic information source"@en ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
+
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger ;
+        c4o:hasGlobalCountSource :my-bibliographic-info-source .
+
+    :my-bibliographic-info-source a c4o:BibliographicInformationSource  ;
+        foaf:homepage <http://scholar.google.com> .
+    """ ;
+    rdfs:comment "A source of information about bibliographic citations, such as Google Scholar, Web of Science or Scopus."@en ;
+    rdfs:isDefinedBy c4o: ;
+    owl:disjointWith c4o:GlobalCitationCount,
+        c4o:InTextReferencePointer,
+        c4o:SingleLocationPointerList ;
+    vs:term_status reg:statusStable .
+

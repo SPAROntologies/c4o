@@ -1,0 +1,25 @@
+@prefix biro: <http://purl.org/spar/biro/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c4o:hasInTextCitationFrequency a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "has in text citation frequency"@en ;
+    vann:example """
+    :my-article
+        frbr:part :my-bibliographic-reference .
+
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        c4o:hasInTextCitationFrequency  '1'^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:comment "The number of separate in-text reference pointers existing within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "@en ;
+    rdfs:domain biro:BibliographicReference ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range xsd:nonNegativeInteger ;
+    vs:term_status reg:statusStable .
+
