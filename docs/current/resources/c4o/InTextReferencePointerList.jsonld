@@ -28,13 +28,13 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b10"
-      },
-      {
-        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b9"
-      },
-      {
         "@id": "http://purl.org/co/List"
+      },
+      {
+        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb10"
+      },
+      {
+        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb9"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -50,23 +50,7 @@
     ]
   },
   {
-    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b10",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://purl.org/spar/c4o/InTextReferencePointerListItem"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://purl.org/co/item"
-      }
-    ]
-  },
-  {
-    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b9",
+    "@id": "_:n374d0038fcb84382b692f44171d0ca6cb10",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -78,6 +62,22 @@
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
         "@id": "http://purl.org/spar/biro/BibliographicReference"
+      }
+    ]
+  },
+  {
+    "@id": "_:n374d0038fcb84382b692f44171d0ca6cb9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerListItem"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://purl.org/co/item"
       }
     ]
   }

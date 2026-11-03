@@ -6,7 +6,7 @@
   <rdf:Description rdf:about="http://purl.org/co/element">
     <rdfs:label xml:lang="en">has element</rdfs:label>
     <rdfs:comment xml:lang="en">The link to the members of a collection.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/co/"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/co/"/>
   </rdf:Description>
 </rdf:RDF>

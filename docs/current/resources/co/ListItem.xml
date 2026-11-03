@@ -6,7 +6,7 @@
   <rdf:Description rdf:about="http://purl.org/co/ListItem">
     <rdfs:comment xml:lang="en">An element belonging to a list.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/co/"/>
     <rdfs:label xml:lang="en">list item</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/co/"/>
   </rdf:Description>
 </rdf:RDF>
