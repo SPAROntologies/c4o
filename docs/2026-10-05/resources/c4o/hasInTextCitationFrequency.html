@@ -227,8 +227,8 @@ What information sources are used to track global citation counts, along with th
       {
         "@id": "http://purl.org/spar/c4o/hasInTextCitationFrequency",
         "@type": [
-          "http://www.w3.org/2002/07/owl#FunctionalProperty",
-          "http://www.w3.org/2002/07/owl#DatatypeProperty"
+          "http://www.w3.org/2002/07/owl#DatatypeProperty",
+          "http://www.w3.org/2002/07/owl#FunctionalProperty"
         ],
         "http://purl.org/vocab/vann/example": [
           {
@@ -271,15 +271,15 @@ What information sources are used to track global citation counts, along with th
     ],
     "@id": "http://purl.org/spar/c4o"
   }
-]</code></pre></div><div class="tab-pane fade" id=id_34941a1bb488fd774758c446ce7fd414_Attribute_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://purl.org/vocab/vann/example> "\n    :my-article\n        frbr:part :my-bibliographic-reference .\n\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        c4o:hasInTextCitationFrequency  '1'^^xsd:nonNegativeInteger .\n    " &lt;http://purl.org/spar/c4o> .
+]</code></pre></div><div class="tab-pane fade" id=id_34941a1bb488fd774758c446ce7fd414_Attribute_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#DatatypeProperty> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/2000/01/rdf-schema#range> &lt;http://www.w3.org/2001/XMLSchema#nonNegativeInteger> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://purl.org/vocab/vann/example> "\n    :my-article\n        frbr:part :my-bibliographic-reference .\n\n    :my-bibliographic-reference a biro:BibliographicReference ;\n        c4o:hasInTextCitationFrequency  '1'^^xsd:nonNegativeInteger .\n    " &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "The number of separate in-text reference pointers existing within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "@en &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#FunctionalProperty> &lt;http://purl.org/spar/c4o> .
 &lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/c4o/> &lt;http://purl.org/spar/c4o> .
 &lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/2000/01/rdf-schema#label> "has in text citation frequency"@en &lt;http://purl.org/spar/c4o> .
 &lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/2000/01/rdf-schema#domain> &lt;http://purl.org/spar/biro/BibliographicReference> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#FunctionalProperty> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#DatatypeProperty> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/2000/01/rdf-schema#range> &lt;http://www.w3.org/2001/XMLSchema#nonNegativeInteger> &lt;http://purl.org/spar/c4o> .
 &lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/hasInTextCitationFrequency> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "The number of separate in-text reference pointers existing within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "@en &lt;http://purl.org/spar/c4o> .
 
 </code></pre></div></div></div></div></div></div></div></div></div></div><div><a class="btn btn-outline-secondary" href=../../c4o.html>← Back to full documentation</a></div><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdn.jsdelivr.net/npm/marked/marked.min.js></script><script src=https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js></script><script>document.addEventListener("DOMContentLoaded", function() {
 
