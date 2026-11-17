@@ -28,10 +28,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b11"
+        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb11"
       },
       {
-        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b12"
+        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb12"
       },
       {
         "@id": "http://purl.org/vocab/frbr/core#Expression"
@@ -55,7 +55,7 @@
     ]
   },
   {
-    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b11",
+    "@id": "_:n374d0038fcb84382b692f44171d0ca6cb11",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -77,7 +77,7 @@
     ]
   },
   {
-    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b12",
+    "@id": "_:n374d0038fcb84382b692f44171d0ca6cb12",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],

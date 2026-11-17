@@ -1,0 +1,48 @@
+@prefix biro: <http://purl.org/spar/biro/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos1: <http://www.w3.org/2008/05/skos#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c4o:InTextReferencePointer a owl:Class ;
+    rdfs:label "in-text reference pointer"@en ;
+    vann:example """
+    :my-article
+        frbr:part :my-in-text-ref-pointer , :my-bibliographic-reference .
+
+    :my-in-text-ref-pointer a c4o:InTextReferencePointer  ;
+        c4o:denotes :my-bibliographic-reference ;
+        c4o:hasContext :my-citation-sentence .
+    """ ;
+    rdfs:comment "A textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence."@en ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass biro:BibliographicReference ;
+            owl:onProperty c4o:denotes ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty c4o:hasContext ],
+        frbr:Expression ;
+    owl:disjointWith c4o:SingleLocationPointerList ;
+    vs:term_status reg:statusStable ;
+    skos1:note """
+The in-text reference pointer is a textual element, usually embedded at the end of a phrase or sentence within the text of a document, that denotes a specific bibliographic reference present in the reference list of that document. 
+For example, if the item in the reference list is: 
+
+    4.  Ko AI, Reis MG, Ribeiro Dourado CM, Johnson WD Jr, Riley LW (1999). Urban epidemic of severe leptospirosis in Brazil. Salvador Leptospirosis Study Group. Lancet 354: 820-825.
+
+The in-text reference pointer to this paper in a journal article may be manifested in a number of ways:	
+
+* Numerically, for example by using the numeral 4 in superscript or between square brackets, thus: '[4]'.
+* Or by use of the author names (or the first author's name plus et al.) and the publication year in parentheses, thus: '(Ko et al., 1999)'. 
+* Or, less commonly, by the use of a code, e.g. by specifying the first surname letter of the first three author of the cited work followed by the last two digits of the year of publication, this string of characters being enclosed within square brackets, thus: '[KRR99]'.
+
+If reference pointers are aggregated, e.g. '[4, 5, 6-9]', they may be described by means of the class `c4o:SingleLocationPointerList`.
+"""@en .
+

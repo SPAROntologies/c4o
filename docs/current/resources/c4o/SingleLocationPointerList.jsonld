@@ -28,13 +28,13 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b7"
-      },
-      {
-        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b8"
-      },
-      {
         "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+      },
+      {
+        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb7"
+      },
+      {
+        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb8"
       },
       {
         "@id": "http://purl.org/vocab/frbr/core#Expression"
@@ -58,7 +58,7 @@
     ]
   },
   {
-    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b7",
+    "@id": "_:n374d0038fcb84382b692f44171d0ca6cb7",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -75,7 +75,7 @@
     ]
   },
   {
-    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b8",
+    "@id": "_:n374d0038fcb84382b692f44171d0ca6cb8",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],

@@ -1,0 +1,34 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos1: <http://www.w3.org/2008/05/skos#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c4o:SingleReferencePointerList a owl:Class ;
+    rdfs:label "single reference pointer list"@en ;
+    vann:example """
+    :my-single-ref-pointer-list-item
+        c4o:pertainsTo :my-bibliographic-reference .
+    """ ;
+    rdfs:comment "An in-text reference pointer list that pertains to exactly one bibliographic reference."@en ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty c4o:pertainsTo ],
+        c4o:InTextReferencePointerList ;
+    vs:term_status reg:statusStable ;
+    skos1:note """
+A single reference pointer list pertains only to one bibliographic reference, being a list of all the in-text reference pointers to that single reference to be found in the citing work.
+
+Note that this semantic constraint is handled by the combined use of a particular restriction of this class, i.e. that the list pertains to exactly one `owl:Thing`, and that the following SWRL rule applies:
+
+    c4o:InTextReferencePointerList(?l), 
+    c4o:denotes (?p, ?r), 
+    swan:item(?l, ?i), 
+    swan:itemContent(?i, ?p) -> 
+    c4o:pertainsTo (?l, ?r)
+"""@en .
+

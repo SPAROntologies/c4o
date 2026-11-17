@@ -28,10 +28,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:nbe907eaac5a34be089dc81e641c920f8b2"
+        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
       },
       {
-        "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
+        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb2"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -47,7 +47,7 @@
     ]
   },
   {
-    "@id": "_:nbe907eaac5a34be089dc81e641c920f8b2",
+    "@id": "_:n374d0038fcb84382b692f44171d0ca6cb2",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],

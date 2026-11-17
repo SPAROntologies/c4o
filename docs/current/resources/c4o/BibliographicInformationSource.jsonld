@@ -28,13 +28,13 @@
     ],
     "http://www.w3.org/2002/07/owl#disjointWith": [
       {
+        "@id": "http://purl.org/spar/c4o/SingleLocationPointerList"
+      },
+      {
         "@id": "http://purl.org/spar/c4o/InTextReferencePointer"
       },
       {
         "@id": "http://purl.org/spar/c4o/GlobalCitationCount"
-      },
-      {
-        "@id": "http://purl.org/spar/c4o/SingleLocationPointerList"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [

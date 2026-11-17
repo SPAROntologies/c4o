@@ -1,0 +1,37 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix skos1: <http://www.w3.org/2008/05/skos#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c4o:hasContext a owl:ObjectProperty ;
+    rdfs:label "has context"@en ;
+    vann:example """
+    :my-article
+        frbr:part :in-text-reference-pointer , :my-bibliographic-reference .
+
+    :in-text-reference-pointer a c4o:InTextReferencePointer  ;
+        c4o:denotes :my-bibliographic-reference ;
+        c4o:hasContext  :my-citation-sentence .
+
+    :my-citation-sentence a doco:Sentence ;
+        c4o:hasContent
+            'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)
+            proposed a formal semantic approach for structured documents.' .
+    """ ;
+    rdfs:comment "The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation."@en ;
+    rdfs:domain c4o:InTextReferencePointer ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range [ a owl:Class ;
+            owl:intersectionOf ( frbr:Expression [ a owl:Restriction ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onProperty c4o:hasContent ] ) ] ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vs:term_status reg:statusStable ;
+    skos1:note "Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`."@en .
+

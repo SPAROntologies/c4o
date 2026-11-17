@@ -1,0 +1,30 @@
+@prefix biro: <http://purl.org/spar/biro/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:denotes a owl:ObjectProperty ;
+    rdfs:label "denotes"@en ;
+    vann:example """
+    :my-bibliographic-reference a biro:BibliographicReference ;
+        dcterms:bibliographicCitation
+            'Renear, A., Dubin, D. & Sperberg-McQueen, C.M. (2002).
+            Towards a semantics for XML markup. In E. Mudson (Chair),
+            Proceedings of the ACM Symposium on Document Engineering,
+            (pp. 119-126). New York: ACM Press.' ;
+        biro:references :my-article .
+
+    :my-in-text-reference-pointer a c4o:InTextReferencePointer ;
+        c4o:denotes :my-bibliographic-reference .
+    """ ;
+    rdfs:comment "The relation between an in-text reference pointer and the bibliographic reference it points to."@en ;
+    rdfs:domain c4o:InTextReferencePointer ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range biro:BibliographicReference ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf c4o:isDenotedBy ;
+    vs:term_status reg:statusStable .
+

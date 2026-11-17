@@ -1,0 +1,24 @@
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+c4o:hasGlobalCitationFrequency a owl:ObjectProperty ;
+    rdfs:label "has global citation frequency"@en ;
+    vann:example """
+    :my-article
+        c4o:hasGlobalCitationFrequency :my-global-citation-count .
+
+    :my-global-citation-count a c4o:GlobalCitationCount ;
+        c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .
+    """ ;
+    rdfs:comment "The relation between a publication entity and its global citation count, according to a particular information source on a particular date."@en ;
+    rdfs:domain frbr:Endeavour ;
+    rdfs:isDefinedBy c4o: ;
+    rdfs:range c4o:GlobalCitationCount ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    vs:term_status reg:statusStable .
+
