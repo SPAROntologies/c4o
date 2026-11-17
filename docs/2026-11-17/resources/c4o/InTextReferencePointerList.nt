@@ -1,0 +1,16 @@
+_:n24498d8ce9514bd3a31671cd608519cab10 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spar/c4o/pertainsTo> .
+_:n24498d8ce9514bd3a31671cd608519cab9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/co/item> .
+_:n24498d8ce9514bd3a31671cd608519cab10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spar/biro/BibliographicReference> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2008/05/skos#note> "An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references."@en .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n24498d8ce9514bd3a31671cd608519cab9 .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spar/c4o> .
+_:n24498d8ce9514bd3a31671cd608519cab10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://purl.org/vocab/vann/example> "\n    :my-in-text-ref-pointer-list\n        c4o:pertainsTo :my-bibliographic-reference ;\n        co:item :my-in-text-ref-pointer-list-item .\n    " .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#label> "in-text reference pointer list"@en .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n24498d8ce9514bd3a31671cd608519cab10 .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#comment> "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."@en .
+_:n24498d8ce9514bd3a31671cd608519cab9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/co/List> .
+_:n24498d8ce9514bd3a31671cd608519cab9 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/spar/c4o/InTextReferencePointerListItem> .
+<http://purl.org/spar/c4o/InTextReferencePointerList> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> <http://purl.org/linked-data/registry#statusStable> .
