@@ -7,19 +7,12 @@
    xmlns:vann="http://purl.org/vocab/vann/"
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb4">
-    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/hasContent"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/c4o/hasContext">
-    <rdfs:label xml:lang="en">has context</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
-    <skos1:note xml:lang="en">Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`.</skos1:note>
-    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
-    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+    <rdfs:comment xml:lang="en">The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb3"/>
+    <rdfs:label xml:lang="en">has context</rdfs:label>
     <vann:example>
     :my-article
         frbr:part :in-text-reference-pointer , :my-bibliographic-reference .
@@ -33,19 +26,26 @@
             'Renear, Dubin, and Sperberg-McQueen (2002, pp. 121-122)
             proposed a formal semantic approach for structured documents.' .
     </vann:example>
-    <rdfs:comment xml:lang="en">The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation.</rdfs:comment>
-    <rdfs:range rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb3"/>
+    <rdfs:domain rdf:resource="http://purl.org/spar/c4o/InTextReferencePointer"/>
+    <skos1:note xml:lang="en">Any FRBR expression that constitutes the range of this property can have at most one particular literal textual content specified through the property `c4o:hasContent`.</skos1:note>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/c4o/"/>
+    <vs:term_status rdf:resource="http://purl.org/linked-data/registry#statusStable"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb6">
-    <rdf:first rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb4"/>
+  <rdf:Description rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://purl.org/spar/c4o/hasContent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb6">
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb4"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb5">
-    <rdf:rest rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb6"/>
-    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb3">
-    <owl:intersectionOf rdf:nodeID="n374d0038fcb84382b692f44171d0ca6cb5"/>
+  <rdf:Description rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb3">
+    <owl:intersectionOf rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb5"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb5">
+    <rdf:rest rdf:nodeID="n0a9201867f0f47c8b0fd93a248c8acbcb6"/>
+    <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
   </rdf:Description>
 </rdf:RDF>

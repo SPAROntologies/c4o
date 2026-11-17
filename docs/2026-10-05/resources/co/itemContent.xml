@@ -5,8 +5,8 @@
 >
   <rdf:Description rdf:about="http://purl.org/co/itemContent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:isDefinedBy rdf:resource="http://purl.org/co/"/>
     <rdfs:label xml:lang="en">has item content</rdfs:label>
     <rdfs:comment xml:lang="en">The link to the actual resource to which the item refers.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/co/"/>
   </rdf:Description>
 </rdf:RDF>

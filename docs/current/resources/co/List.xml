@@ -5,8 +5,8 @@
 >
   <rdf:Description rdf:about="http://purl.org/co/List">
     <rdfs:label xml:lang="en">list</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">An ordered array of items, that can be present in multiple copies.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/co/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
 </rdf:RDF>

@@ -214,17 +214,17 @@ What information sources are used to track global citation counts, along with th
     """ ;
         rdfs:comment "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."@en ;
         rdfs:isDefinedBy c4o: ;
-        rdfs:subClassOf _:n374d0038fcb84382b692f44171d0ca6cb10,
-            _:n374d0038fcb84382b692f44171d0ca6cb9,
+        rdfs:subClassOf _:n0a9201867f0f47c8b0fd93a248c8acbcb10,
+            _:n0a9201867f0f47c8b0fd93a248c8acbcb9,
             co:List ;
         vs:term_status reg:statusStable ;
         skos1:note "An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references."@en .
 
-    _:n374d0038fcb84382b692f44171d0ca6cb10 a owl:Restriction ;
+    _:n0a9201867f0f47c8b0fd93a248c8acbcb10 a owl:Restriction ;
         owl:onProperty c4o:pertainsTo ;
         owl:someValuesFrom biro:BibliographicReference .
 
-    _:n374d0038fcb84382b692f44171d0ca6cb9 a owl:Restriction ;
+    _:n0a9201867f0f47c8b0fd93a248c8acbcb9 a owl:Restriction ;
         owl:allValuesFrom c4o:InTextReferencePointerListItem ;
         owl:onProperty co:item .
 }
@@ -261,13 +261,13 @@ What information sources are used to track global citation counts, along with th
         ],
         "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
           {
+            "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb10"
+          },
+          {
+            "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb9"
+          },
+          {
             "@id": "http://purl.org/co/List"
-          },
-          {
-            "@id": "_:n374d0038fcb84382b692f44171d0ca6cb10"
-          },
-          {
-            "@id": "_:n374d0038fcb84382b692f44171d0ca6cb9"
           }
         ],
         "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -283,7 +283,7 @@ What information sources are used to track global citation counts, along with th
         ]
       },
       {
-        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb10",
+        "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb10",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -299,7 +299,7 @@ What information sources are used to track global citation counts, along with th
         ]
       },
       {
-        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb9",
+        "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb9",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -317,22 +317,22 @@ What information sources are used to track global citation counts, along with th
     ],
     "@id": "http://purl.org/spar/c4o"
   }
-]</code></pre></div><div class="tab-pane fade" id=id_9ae00c66cfef8fab55d189f79f46104d_Concept_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb9 &lt;http://www.w3.org/2002/07/owl#allValuesFrom> &lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb9 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/co/item> &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb10 &lt;http://www.w3.org/2002/07/owl#someValuesFrom> &lt;http://purl.org/spar/biro/BibliographicReference> &lt;http://purl.org/spar/c4o> .
+]</code></pre></div><div class="tab-pane fade" id=id_9ae00c66cfef8fab55d189f79f46104d_Concept_prov_3 role=tabpanel><pre class="mb-0 small"><code>_:n0a9201867f0f47c8b0fd93a248c8acbcb9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n0a9201867f0f47c8b0fd93a248c8acbcb10 &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb9 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/co/item> &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb10 &lt;http://www.w3.org/2002/07/owl#someValuesFrom> &lt;http://purl.org/spar/biro/BibliographicReference> &lt;http://purl.org/spar/c4o> .
 &lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."@en &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> &lt;http://purl.org/co/List> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#label> "in-text reference pointer list"@en &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n374d0038fcb84382b692f44171d0ca6cb10 &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/c4o/> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2008/05/skos#note> "An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references."@en &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n374d0038fcb84382b692f44171d0ca6cb9 &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb10 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/c4o> .
 &lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://purl.org/vocab/vann/example> "\n    :my-in-text-ref-pointer-list\n        c4o:pertainsTo :my-bibliographic-reference ;\n        co:item :my-in-text-ref-pointer-list-item .\n    " &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb10 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/c4o/pertainsTo> &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2008/05/skos#note> "An in-text reference pointer list can only contain in-text reference pointer list items, and it always pertains to one or more bibliographic references."@en &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb10 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/spar/c4o/pertainsTo> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n0a9201867f0f47c8b0fd93a248c8acbcb9 &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb9 &lt;http://www.w3.org/2002/07/owl#allValuesFrom> &lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#label> "in-text reference pointer list"@en &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/c4o/> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> &lt;http://purl.org/co/List> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerList> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb10 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/c4o> .
 
 </code></pre></div></div></div></div></div></div></div></div></div></div><div><a class="btn btn-outline-secondary" href=../../c4o.html>← Back to full documentation</a></div><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdn.jsdelivr.net/npm/marked/marked.min.js></script><script src=https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js></script><script>document.addEventListener("DOMContentLoaded", function() {
 

@@ -31,7 +31,7 @@
         "@id": "http://purl.org/spar/c4o/InTextReferencePointerList"
       },
       {
-        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb2"
+        "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb2"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -47,7 +47,7 @@
     ]
   },
   {
-    "@id": "_:n374d0038fcb84382b692f44171d0ca6cb2",
+    "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb2",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],

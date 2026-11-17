@@ -218,7 +218,7 @@ Note that, as specified through the `hasKey` assertion, such a list cannot conta
     """ ;
         rdfs:comment "A list item that must be used in the context of an in-text reference pointer list."@en ;
         rdfs:isDefinedBy c4o: ;
-        rdfs:subClassOf _:n374d0038fcb84382b692f44171d0ca6cb1,
+        rdfs:subClassOf _:n0a9201867f0f47c8b0fd93a248c8acbcb1,
             co:ListItem ;
         vs:term_status reg:statusStable ;
         skos1:note """
@@ -227,7 +227,7 @@ An in-text reference pointer list item can contain only a single in-text referen
 Note that, as specified through the `hasKey` assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.
 """@en .
 
-    _:n374d0038fcb84382b692f44171d0ca6cb1 a owl:Restriction ;
+    _:n0a9201867f0f47c8b0fd93a248c8acbcb1 a owl:Restriction ;
         owl:allValuesFrom c4o:InTextReferencePointer ;
         owl:onProperty co:itemContent .
 }
@@ -267,7 +267,7 @@ Note that, as specified through the `hasKey` assertion, such a list cannot conta
             "@id": "http://purl.org/co/ListItem"
           },
           {
-            "@id": "_:n374d0038fcb84382b692f44171d0ca6cb1"
+            "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb1"
           }
         ],
         "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -283,7 +283,7 @@ Note that, as specified through the `hasKey` assertion, such a list cannot conta
         ]
       },
       {
-        "@id": "_:n374d0038fcb84382b692f44171d0ca6cb1",
+        "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb1",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -301,18 +301,18 @@ Note that, as specified through the `hasKey` assertion, such a list cannot conta
     ],
     "@id": "http://purl.org/spar/c4o"
   }
-]</code></pre></div><div class="tab-pane fade" id=id_bccb55e21eac8485412feb29e1f9ee85_Concept_prov_3 role=tabpanel><pre class="mb-0 small"><code>&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#label> "in-text reference pointer list item"@en &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb1 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/co/itemContent> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://purl.org/vocab/vann/example> "\n    :my-in-text-ref-pointer-list-item\n        co:itemContent :my-in-text-ref-pointer .\n    " &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/c4o/> &lt;http://purl.org/spar/c4o> .
-_:n374d0038fcb84382b692f44171d0ca6cb1 &lt;http://www.w3.org/2002/07/owl#allValuesFrom> &lt;http://purl.org/spar/c4o/InTextReferencePointer> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2008/05/skos#note> "\nAn in-text reference pointer list item can contain only a single in-text reference pointer.\n\nNote that, as specified through the `hasKey` assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.\n"@en &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> &lt;http://purl.org/co/ListItem> &lt;http://purl.org/spar/c4o> .
-&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n374d0038fcb84382b692f44171d0ca6cb1 &lt;http://purl.org/spar/c4o> .
+]</code></pre></div><div class="tab-pane fade" id=id_bccb55e21eac8485412feb29e1f9ee85_Concept_prov_3 role=tabpanel><pre class="mb-0 small"><code>_:n0a9201867f0f47c8b0fd93a248c8acbcb1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Restriction> &lt;http://purl.org/spar/c4o> .
 &lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#comment> "A list item that must be used in the context of an in-text reference pointer list."@en &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type> &lt;http://www.w3.org/2002/07/owl#Class> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#isDefinedBy> &lt;http://purl.org/spar/c4o/> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2008/05/skos#note> "\nAn in-text reference pointer list item can contain only a single in-text reference pointer.\n\nNote that, as specified through the `hasKey` assertion, such a list cannot contain more than one item containing the same in-text reference pointer entity.\n"@en &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://purl.org/vocab/vann/example> "\n    :my-in-text-ref-pointer-list-item\n        co:itemContent :my-in-text-ref-pointer .\n    " &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#label> "in-text reference pointer list item"@en &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb1 &lt;http://www.w3.org/2002/07/owl#allValuesFrom> &lt;http://purl.org/spar/c4o/InTextReferencePointer> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> &lt;http://purl.org/co/ListItem> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> &lt;http://purl.org/linked-data/registry#statusStable> &lt;http://purl.org/spar/c4o> .
+_:n0a9201867f0f47c8b0fd93a248c8acbcb1 &lt;http://www.w3.org/2002/07/owl#onProperty> &lt;http://purl.org/co/itemContent> &lt;http://purl.org/spar/c4o> .
+&lt;http://purl.org/spar/c4o/InTextReferencePointerListItem> &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf> _:n0a9201867f0f47c8b0fd93a248c8acbcb1 &lt;http://purl.org/spar/c4o> .
 
 </code></pre></div></div></div></div></div></div></div></div></div></div><div><a class="btn btn-outline-secondary" href=../../c4o.html>← Back to full documentation</a></div><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js></script><script src=https://cdn.jsdelivr.net/npm/marked/marked.min.js></script><script src=https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js></script><script>document.addEventListener("DOMContentLoaded", function() {
 
