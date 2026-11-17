@@ -17,7 +17,7 @@ c4o:hasContent a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "The textual content of a particular FRBR expression."@en ;
     rdfs:domain frbr:Expression ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:range rdfs:Literal ;
     rdfs:subPropertyOf owl:topDataProperty ;
     vs:term_status reg:statusStable .

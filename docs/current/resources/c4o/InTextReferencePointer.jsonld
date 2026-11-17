@@ -17,7 +17,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.org/spar/c4o/"
+        "@id": "http://purl.org/spar/c4o"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -31,10 +31,10 @@
         "@id": "http://purl.org/vocab/frbr/core#Expression"
       },
       {
-        "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb11"
+        "@id": "_:n24498d8ce9514bd3a31671cd608519cab11"
       },
       {
-        "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb12"
+        "@id": "_:n24498d8ce9514bd3a31671cd608519cab12"
       }
     ],
     "http://www.w3.org/2002/07/owl#disjointWith": [
@@ -55,7 +55,7 @@
     ]
   },
   {
-    "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb11",
+    "@id": "_:n24498d8ce9514bd3a31671cd608519cab11",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -77,7 +77,7 @@
     ]
   },
   {
-    "@id": "_:n0a9201867f0f47c8b0fd93a248c8acbcb12",
+    "@id": "_:n24498d8ce9514bd3a31671cd608519cab12",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],

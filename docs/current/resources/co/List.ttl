@@ -5,5 +5,5 @@
 co:List a owl:Class ;
     rdfs:label "list"@en ;
     rdfs:comment "An ordered array of items, that can be present in multiple copies."@en ;
-    rdfs:isDefinedBy co: .
+    rdfs:isDefinedBy <http://purl.org/co> .
 

@@ -20,7 +20,7 @@ c4o:InTextReferencePointer a owl:Class ;
         c4o:hasContext :my-citation-sentence .
     """ ;
     rdfs:comment "A textual device denoting a single bibliographic reference that is embedded in the text of a document within the context of a particular sentence."@en ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biro:BibliographicReference ;
             owl:onProperty c4o:denotes ;
