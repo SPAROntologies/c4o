@@ -14,7 +14,7 @@ c4o:InTextReferencePointerListItem a owl:Class ;
         co:itemContent :my-in-text-ref-pointer .
     """ ;
     rdfs:comment "A list item that must be used in the context of an in-text reference pointer list."@en ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom c4o:InTextReferencePointer ;
             owl:onProperty co:itemContent ],

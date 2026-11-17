@@ -16,7 +16,7 @@ c4o:InTextReferencePointerList a owl:Class ;
         co:item :my-in-text-ref-pointer-list-item .
     """ ;
     rdfs:comment "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."@en ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty c4o:pertainsTo ;
             owl:someValuesFrom biro:BibliographicReference ],

@@ -22,7 +22,7 @@ c4o:isDenotedBy a owl:ObjectProperty ;
     """ ;
     rdfs:comment "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."@en ;
     rdfs:domain biro:BibliographicReference ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:range c4o:InTextReferencePointer ;
     rdfs:subPropertyOf owl:topObjectProperty ;
     vs:term_status reg:statusStable .

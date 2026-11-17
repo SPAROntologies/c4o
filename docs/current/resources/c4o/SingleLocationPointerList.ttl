@@ -16,7 +16,7 @@ c4o:SingleLocationPointerList a owl:Class ;
         c4o:hasContext :my-sentence .
     """ ;
     rdfs:comment "An in-text reference pointer list that pertains to all the in-text reference pointers to two or more references occurring at a single location in the text of the citing work."@en ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty c4o:hasContext ],

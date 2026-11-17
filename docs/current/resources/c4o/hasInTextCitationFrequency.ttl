@@ -19,7 +19,7 @@ c4o:hasInTextCitationFrequency a owl:DatatypeProperty,
     """ ;
     rdfs:comment "The number of separate in-text reference pointers existing within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document). "@en ;
     rdfs:domain biro:BibliographicReference ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:range xsd:nonNegativeInteger ;
     vs:term_status reg:statusStable .
 

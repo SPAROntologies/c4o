@@ -5,5 +5,5 @@
 frbr:Endeavour a owl:Class ;
     rdfs:label "endeavour"@en ;
     rdfs:comment "The different aspects of user interests in the products of intellectual or artistic artifact."@en ;
-    rdfs:isDefinedBy frbr: .
+    rdfs:isDefinedBy <http://purl.org/vocab/frbr/core> .
 

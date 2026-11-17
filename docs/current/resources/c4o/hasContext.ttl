@@ -26,7 +26,7 @@ c4o:hasContext a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, providing the rhetorical motivation for the existence of that citation."@en ;
     rdfs:domain c4o:InTextReferencePointer ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:range [ a owl:Class ;
             owl:intersectionOf ( frbr:Expression [ a owl:Restriction ;
                         owl:maxCardinality "1"^^xsd:nonNegativeInteger ;

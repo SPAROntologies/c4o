@@ -17,7 +17,7 @@ c4o:hasGlobalCountValue a owl:DatatypeProperty ;
     """ ;
     rdfs:comment "An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date."@en ;
     rdfs:domain c4o:GlobalCitationCount ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:range xsd:nonNegativeInteger ;
     vs:term_status reg:statusStable .
 

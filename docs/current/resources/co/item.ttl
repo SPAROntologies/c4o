@@ -5,5 +5,5 @@
 co:item a owl:ObjectProperty ;
     rdfs:label "has item"@en ;
     rdfs:comment "The link to every item of a bag."@en ;
-    rdfs:isDefinedBy co: .
+    rdfs:isDefinedBy <http://purl.org/co> .
 

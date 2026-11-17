@@ -17,7 +17,7 @@ c4o:hasGlobalCitationFrequency a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between a publication entity and its global citation count, according to a particular information source on a particular date."@en ;
     rdfs:domain frbr:Endeavour ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:range c4o:GlobalCitationCount ;
     rdfs:subPropertyOf owl:topObjectProperty ;
     vs:term_status reg:statusStable .

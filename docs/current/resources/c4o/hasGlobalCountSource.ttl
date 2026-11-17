@@ -20,7 +20,7 @@ c4o:hasGlobalCountSource a owl:ObjectProperty ;
     """ ;
     rdfs:comment "The relation between a global citation count and the bibliographic information source providing the global citation count information for a particular publication on a particular date."@en ;
     rdfs:domain c4o:GlobalCitationCount ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:range c4o:BibliographicInformationSource ;
     rdfs:subPropertyOf owl:topObjectProperty ;
     vs:term_status reg:statusStable .

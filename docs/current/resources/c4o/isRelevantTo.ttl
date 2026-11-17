@@ -24,7 +24,7 @@ c4o:isRelevantTo a owl:ObjectProperty,
     """ ;
     rdfs:comment "A relationship between two FRBR expressions, according to which one is declared to be of rhetorical relevance to another, for instance the textual context of a particular in-text reference pointer in one document is relevant to a section of text within the published document that is referenced by the bibliographic reference denoted by the in-text reference pointer, and vice versa that the converse relevance also exists."@en ;
     rdfs:domain frbr:Expression ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     rdfs:range frbr:Expression ;
     rdfs:subPropertyOf owl:topObjectProperty ;
     vs:term_status reg:statusStable .

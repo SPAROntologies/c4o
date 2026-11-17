@@ -12,7 +12,7 @@ c4o:GlobalCitationCount a owl:Class ;
         c4o:hasGlobalCountValue  '5'^^xsd:nonNegativeInteger .
     """ ;
     rdfs:comment "The number of times a work has been cited globally, as determined from a particular bibliographic information source on a particular date."@en ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     owl:disjointWith c4o:InTextReferencePointer,
         c4o:SingleLocationPointerList ;
     vs:term_status reg:statusStable .

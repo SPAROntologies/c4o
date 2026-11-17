@@ -5,5 +5,5 @@
 biro:BibliographicReference a owl:Class ;
     rdfs:label "bibliographic reference"@en ;
     rdfs:comment "An expression of a bibliographic record in a specific format, that references a particular textual or data publication (or a work in preparation for publication). Each bibliographic reference is a list of items containing entities that describe aspects of the referenced work - for example authors, title, journal, publication year - selected from the bibliographic record."@en ;
-    rdfs:isDefinedBy biro: .
+    rdfs:isDefinedBy <http://purl.org/spar/biro> .
 

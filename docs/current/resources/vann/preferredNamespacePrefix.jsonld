@@ -1,6 +1,6 @@
 [
   {
-    "@id": "http://purl.org/vocab/vann/preferredNamespaceURI",
+    "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
     "@type": [
       "http://www.w3.org/2002/07/owl#AnnotationProperty"
     ]

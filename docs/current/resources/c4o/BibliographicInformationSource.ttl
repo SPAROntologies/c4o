@@ -19,7 +19,7 @@ c4o:BibliographicInformationSource a owl:Class ;
         foaf:homepage <http://scholar.google.com> .
     """ ;
     rdfs:comment "A source of information about bibliographic citations, such as Google Scholar, Web of Science or Scopus."@en ;
-    rdfs:isDefinedBy c4o: ;
+    rdfs:isDefinedBy <http://purl.org/spar/c4o> ;
     owl:disjointWith c4o:GlobalCitationCount,
         c4o:InTextReferencePointer,
         c4o:SingleLocationPointerList ;

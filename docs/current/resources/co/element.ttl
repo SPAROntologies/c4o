@@ -5,5 +5,5 @@
 co:element a owl:ObjectProperty ;
     rdfs:label "has element"@en ;
     rdfs:comment "The link to the members of a collection."@en ;
-    rdfs:isDefinedBy co: .
+    rdfs:isDefinedBy <http://purl.org/co> .
 
